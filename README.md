@@ -1,5 +1,5 @@
 # SEI-Project-2
-The concept of our game is to to connect local small businesses with developers who can redesign their old websites.
+The concept of our app is to to connect local small businesses with developers who can redesign their old websites.
 
 # WorkFlow 
 
