@@ -1,31 +1,32 @@
 const mongoose = require('mongoose')
-
 const businessSchema = new mongooose.Schema({
-
-	businessName: { // business name OR contact at the business name
+	businessName: {
 		type: String,
+		required: true
 	},
 	contactName: {
 		type: String,
+		required: true
 	}
-	location: { // not sure the type
+	email: {
 		type: String,
+		required: true
+	}
+	password: {
+		type: String,
+		required: true
+	}
+	location: {
+		type: String // in placeholder -- "enter address"
 	},
-	industry: { // drop down with categories (business types)
+	industry: {
 		type: String,
+		required: true
 	},
 	posted: {
 		type: Date,
 		default: Date.now
-	},
-	need: { // what they're looking for from dev job seekers
-		type: String, 
-	},
-	email: {
-		type: String,
 	}
-
 })
-
 const Business = mongoose.model('Business', businessSchema)
 module.exports = Business

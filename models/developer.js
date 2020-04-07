@@ -1,27 +1,34 @@
 const mongoose = require('mongoose')
-
 const developerSchema = new mongoose.Schema({
 	name: {
 		type: String,
-	},
-	companyName: { //optional (for freelancer or devs with companies)
-		type: String,
-	},
-	location: {
-		type: String,
-	},
-	skill: { // dropdown (with languages)
-		type: String,
-	},
-	experience: { // dropdown with either years of expereince or level (sr. mid, jr. etc.)
-		type: String,
+		required: true
 	},
 	email: {
 		type: String,
+		required: true
 	},
-
+	password: {
+		type: String,
+		required: true
+	}
+	companyName: {
+		type: String
+	},
+	location: {
+		type: String
+	},
+	languages: {
+		type: String
+	}
+	// skills: [{
+	// 	languages: String,
+	// 	type: String,
+	// }],
+	experience: {
+		type: String,
+	},
 })
-
-
 const Developer = mongoose.model('Developer', developerSchema)
 module.exports = Developer
+// shortest path is to do sepearate logins for developers and users (businesses/other)

@@ -1,25 +1,38 @@
 const mongoose = require('mongoose')
-
 const offerSchema = new mongoose.Schema({
 	name: {
-		type: String
+		type: String,
+		required: true
 	},
 	experience: {
-		type: String //drop down for entry-level, sr. level, etc.
+		type: String,
+		required: true
 	},
-	amount: { // devs opportunity to say, "i can do this, i have done this before, cahnce to sell themselves"
-		type: Number
+	amount: {
+		type: Number,
+		required: true
 	},
 	description: {
-		type: String
+		type: String,
+		required: true
 	},
-	comment: {
-		type: mongoose.Schema.Types.ObjecId,
-		ref: 'Post'
+	comments: {
+		type: String,
+	},
+	status: {
+		type: String,
+		enum: ['accepted', 'declined', 'new']
+	},
+	post: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'Post',
+		required: true
+	},
+	developer: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'Developer',
+		required: true
 	}
-
 })
-
-
 const Offer = mongoose.model('Offer', offerSchema)
 module.exports = Offer
