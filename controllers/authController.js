@@ -3,8 +3,8 @@ const router = express.Router()
 
 
 
-router.get('/register', (req, res) => {
-  res.send('register router working')
+router.get('/join', (req, res) => {
+  res.render('auth/join.ejs')
 })
 
 
