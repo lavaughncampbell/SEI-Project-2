@@ -20,12 +20,17 @@ server.use(session({
   saveUninitialized: false
 }))
 
+// controllers
+const authController = require('./controllers/authController')
+server.use('/auth', authController)
+
 server.get('/', (req, res) => {
   res.render('home.ejs')
 })
 server.get('*', (req, res) => {
   res.status(404).render('404.ejs')
 })
+
 
 
 
