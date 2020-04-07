@@ -67,3 +67,18 @@ User Story: The user can click on make offer or the title link from the list pag
 User Story: The user can return to the my jobs page and delete their job posts. Deleting a post/job removes the link from the list (in the show page) 
 
 ![GitHub Logo](https://i.imgur.com/RlJVrLH.png)
+
+### New Offer Was Made Page
+User Story: The user can now see a red button which when clicked takes the user to the new offer show page. 
+
+![GitHub Logo](https://i.imgur.com/wlzLPTV.png)
+
+### Developer Offer Show Page
+User Story: The user can see the offer made by the developer listing the developer's name, experience, amount, and the original job post description and comment. 
+
+![GitHub Logo](https://i.imgur.com/dgwxY4R.png)
+
+### New Hire Page
+User Story: The developer user can then login to see the offer was accepted and he/she was hired for the job post. 
+
+![GitHub Logo](https://i.imgur.com/gHaKPz1.png)
