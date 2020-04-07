@@ -32,69 +32,42 @@ User Story: The user clicked my jobs from the sub nav.
 
 ![GitHub Logo](https://i.imgur.com/hptKSqI.png)
 
-### Main Game Screen (Question Option)  
-User Story: The user clicked on the post a job button. This brings up the new page form. 
+### New Job Page (Question Option)  
+User Story: The user clicked on the post a job button. This brings up the new page form they will fill out. 
 ![GitHub Logo](https://i.imgur.com/FHWKMvb.png)
 
-### Main Game Screen (Value Selected)  
-User Story: The user is on the question main screen. The user must mouse over and select which category and value they will take to choose for their question. This shows a value highlighted for selection. 
+### Create Job Page (Value Selected)  
+User Story: The user submitted the new page form and creating a job post was successful. 
 
 
-![GitHub Logo](https://i.imgur.com/PUHDd2z.png)
+![GitHub Logo](https://i.imgur.com/bGMVjof.png)
 
-### Question Trivia Screen  
-User Story: The user will review the question and select the corresponding answer to that question. 
-
-
-![GitHub Logo](https://i.imgur.com/ZI1iH7h.png)
-
-### Question Trivia Screen (Question Answered)  
-User Story: The user has selected one of the available answers. 
+### Edit Job PAGE  
+User Story: The user can edit the new job post by clicking edit and bringing up the form. 
 
 
-![GitHub Logo](https://i.imgur.com/TvjtH0M.png)
+![GitHub Logo](https://i.imgur.com/eziriXo.png)
 
-### Question Trivia Screen (Game Response)  
-User Story: The user is reading the response from the game if the answer was correct or not. The user will see the correct answer with a written example of the question to learn from
-
-
-![GitHub Logo](https://i.imgur.com/PAylmRh.png)
-
-### Score Update Screen (Game Response)  
-User Story: The user will get an update on their current score and player 2 will get ready for their turn. 
+### Update Job Page (Question Answered)  
+User Story: The user then clicks on update which updates the job post and returns them to the my jobs page.  
 
 
-![GitHub Logo](https://i.imgur.com/MyLgKne.png)
+![GitHub Logo](https://i.imgur.com/82g4thU.png)
 
-### Player 2 Option Selection Screen 
-User Story: The 2nd user will now select question or code to start the 2nd round of the game. 
-
-
-![GitHub Logo](https://i.imgur.com/WJaFUAc.png)
-
-### Player 2 Option Selection Screen (Code)  
-User Story: The 2nd user will now select question or code to start the 2nd round of the game. 
+### All Jobs Sub Nav Link (Game Response)  
+User Story: The user hovers over the sub nav page and clicks on the all job posts which brings up a list of all job posted so far. 
 
 
-![GitHub Logo](https://i.imgur.com/2oxhnKf.png)
+![GitHub Logo](https://i.imgur.com/IYDmkIR.png)
 
-### Player 2 Main Game Screen (Code Option)  
-User Story: The 2nd user will select a category and value. 
-
-
-![GitHub Logo](https://i.imgur.com/aNDZ08k.png)
-
-### Code Challenge Screen  
-User Story: The 2nd user will read the question and enter the correct syntax. 
+### Show Job Post Page (Game Response)  
+User Story: The user can click on make offer or the title link from the list page. This brings up the show page for the user that gives all the info about the one job. 
 
 
-![GitHub Logo](https://i.imgur.com/kKU2qi9.png)
+![GitHub Logo](https://i.imgur.com/w3C3WG4.png)
 
-### Code Challenge Screen (Code Submit/Game Respone)   
-User Story: The 2nd user will submit the answer and the game will respond with correct or incorrect. 
+### Delete Job Post Page
+User Story: The user can return to the my jobs page and delete their job posts.  
 
 
-![GitHub Logo](https://i.imgur.com/v1dGP6C.png)
-
-### Score Update Screen (Player 2)   
-User Story: The user will see updates on the current score for both users and player 1 will be up next with the option to start round 3
+![GitHub Logo](https://i.imgur.com/RlJVrLH.png)
