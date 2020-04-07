@@ -14,9 +14,7 @@ const postSchema = new mongoose.Schema({
 	budget: {
 		type: Number,
 	}
-
 })
-
 
 const Post = mongoose.model('Post', postSchema)
 module.exports = Post
