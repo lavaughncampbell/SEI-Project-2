@@ -1,34 +1,41 @@
 <%- include('../partials/header.ejs') %>
 
   <h3>Join ChiQuery</h3>
-
-  <form method="POST" action="/auth/join">
-    <fieldset>
-      <legend>
-        <small>
-          Choose a email and password below
-        </small>
-      </legend>
-      <div>
-        <label for="email">Email:</label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          placeholder="Choose an email"
-        />
+    <div class="form-box">
+      <div class="button-box">
+        <div id="btn"></div>
+        <button type="button" class="toggle-btn" onclick="register()">Register</button>
+        <button type="button" class="toggle-btn" onclick="login()">Log In</button>
       </div>
-      <div>
-        <label for="password">Password</label>
-        <input
-          id="password"
-          type="password"
-          name="password"
-          placeholder="Choose a password"
-        >
-      </div>
-      <button>Sign up!</button>
-    </fieldset>
-  </form>
+      <form id="login" class="input-group">
+        <input type="text" class="input-field" name="input-field" placeholder="User Id" required>
+        <input type="text" class="input-field" name="input-field" placeholder="Enter Password" required>
+        <button type="submit" class="submit-btn">Log In</button>
+      </form>
+         <form id="register" class="input-group">
+        <input type="text" class="input-field" name="input-field" placeholder="User Id" required>
+        <input type="email" class="input-field" name="input-field" placeholder="Email Id" required>
+        <input type="text" class="input-field" name="input-field" placeholder="Enter Password" required>
+        <button type="submit" class="submit-btn">Register</button>
+      </form>
+    </div>
 
-<%- include('../partials/footer.ejs') %>
+    <script>
+      let x = document.getElementById("register");
+      let y = document.getElementById("login");
+      let z = document.getElementById("btn")
+
+      function login() {
+        x.style.left = "-400px";
+        y.style.left = "50px";
+        z.style.left = "110px";
+      }
+
+      function register() {
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0";
+      }
+
+    </script>
+
