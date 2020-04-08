@@ -11,27 +11,27 @@ const developerSchema = new mongoose.Schema({
 	password: {
 		type: String,
 		// required: true
-	}
-	// companyName: {
-	// 	type: String
-	// },
-	// location: {
-	// 	type: String
-	// },
-	// languages: {
-	// 	type: String
-	// },
-	// // skills: [{
-	// // 	languages: String,
-	// // 	type: String,
-	// // }],
-	// experience: {
+	},
+	companyName: {
+		type: String
+	},
+	location: {
+		type: String
+	},
+	languages: {
+		type: String
+	},
+	// skills: [{
+	// 	languages: String,
 	// 	type: String,
-	// },
-	// areYouDeveloper: {
-	// 	type: Boolean,
-	// 	required: true
-	// }
+	// }],
+	experience: {
+		type: String,
+	},
+	areYouDeveloper: {
+		type: Boolean,
+		required: true
+	}
 })
 const Developer = mongoose.model('Developer', developerSchema)
 module.exports = Developer

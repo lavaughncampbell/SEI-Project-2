@@ -37,8 +37,8 @@ router.post('/join', async (req, res, next) => {
 		 	req.session.email = createdDeveloper.email
 		 	req.session.message = `${createdDeveloper.email}`
 		 	console.log(createdDeveloper);
-		 	// res.redirect('/')
-		 	res.status(201).send("registered and logged in as " + req.session.email)
+		 	res.redirect('/') // will need message saying somethng like, "welcome back (username)"
+		 	// res.status(201).send("registered and logged in as " + req.session.email)
 		 }
 	} 
 	catch(err) {
