@@ -2,16 +2,16 @@ const mongoose = require('mongoose')
 const developerSchema = new mongoose.Schema({
 	name: {
 		type: String,
-		required: true
+		// required: true
 	},
 	email: {
 		type: String,
-		required: true
+		// required: true
 	},
 	password: {
 		type: String,
-		required: true
-	}
+		// required: true
+	},
 	companyName: {
 		type: String
 	},
@@ -20,7 +20,7 @@ const developerSchema = new mongoose.Schema({
 	},
 	languages: {
 		type: String
-	}
+	},
 	// skills: [{
 	// 	languages: String,
 	// 	type: String,
