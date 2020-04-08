@@ -14,8 +14,8 @@ router.get('/login', (req, res) => {
 
 router.post('/join', async (req, res, next) => {
 	try {
-		 console.log(req.body);
-		 const desiredUserId = req.body.userId
+		console.log(req.body);
+		 const desiredName = req.body.name
 		 const desiredEmail = req.body.email
 		 const desiredPassword = req.body.password
 		 const emailWithThisEmail = await Developer.findOne({
@@ -28,13 +28,16 @@ router.post('/join', async (req, res, next) => {
 		 }
 		 else {
 		 	const createdDeveloper = await Developer.create({
+		 		name: desiredName,
 		 		email: desiredEmail,
-		 		password: desiredPassword,
-		 		userId: desiredUserId
+		 		password: desiredPassword
 		 	})
 		 	req.session.loggedIn = true
 		 	req.session.developerId = createdDeveloper._id
 		 	req.session.email = createdDeveloper.email
+		 	req.session.message = `${createdDeveloper.email}`
+		 	console.log(createdDeveloper);
+		 	// res.redirect('/')
 		 	res.status(201).send("registered and logged in as " + req.session.email)
 		 }
 	} 

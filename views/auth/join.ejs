@@ -1,5 +1,7 @@
 <%- include('../partials/header.ejs') %>
+
   <body onload="register()">
+
   <h3>Join ChiQuery</h3>
     <div class="form-box">
       <div class="button-box">
@@ -13,54 +15,53 @@
           class="toggle-btn" 
           onclick="login()">Log In</button>
       </div>
-      </form method="POST" action="/auth/join" id="register" class="input-group">
-         <form id="register" class="input-group">
+      <form method="POST" action="/auth/join" id="register" class="input-group">
         <input 
-          type="text" 
+          type="name" 
           class="input-field" 
-          name="input-field" 
-          placeholder="User Id" 
+          name="name" 
+          placeholder="Name" 
           required>
         <input 
           type="email" 
           class="input-field" 
-          name="input-field" 
-          placeholder="Email Id" 
+          name="email" 
+          placeholder="Enter Email" 
           required>
         <input 
-          type="text" 
+          type="password" 
           class="input-field" 
-          name="input-field" 
+          name="password" 
           placeholder="Enter Password" 
           required>
- <!--        <label for="areYouDeveloper">Are you a Developer?</label>
+<!--         <label for="areYouDeveloper">Are you a Developer?</label>
         <input 
           id="checkbox"
           type="checkbox" 
           class="input-field"
           name="areYouDeveloper"
           required> -->
-        <button type="submit" class="submit-btn">Register</button>
+        <button class="submit-btn">Register</button>
       </form>
+
       <form method="POST" action="/auth/join" id="login" class="input-group">
         <input 
-          type="text" 
+          type="name" 
           class="input-field" 
-          name="input-field" 
-          placeholder="User Id" 
+          name="name" 
+          placeholder="Enter Name" 
           required>
         <input 
-          type="text" 
+          type="password" 
           class="input-field" 
-          name="input-field" 
+          name="password" 
           placeholder="Enter Password" 
           required>
-        <button 
-          type="submit" 
-          class="submit-btn">Log In</button>
-    </div>
+        <button class="submit-btn">Log In</button>
+      </form>
 
     <script>
+
       let x = document.getElementById("register");
       let y = document.getElementById("login");
       let z = document.getElementById("btn");
@@ -76,6 +77,7 @@
         y.style.left = "450px";
         z.style.left = "0";
       }
+
     </script>
 
     <%- include('../partials/footer.ejs') %>

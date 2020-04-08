@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const businessSchema = new mongooose.Schema({
+	
 	businessName: {
 		type: String,
 		required: true
@@ -26,6 +27,10 @@ const businessSchema = new mongooose.Schema({
 	posted: {
 		type: Date,
 		default: Date.now
+	},
+	areYouDeveloper: {
+		type: Boolean,
+		required: true
 	}
 })
 const Business = mongoose.model('Business', businessSchema)
