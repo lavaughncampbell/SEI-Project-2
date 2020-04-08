@@ -1,8 +1,62 @@
-body {
-  background: brown;
+html {
+  background: url(https://i.imgur.com/wEPH80T.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
+.container {
+  background: rgb(213, 213, 213, 0.5);
+  font-family: zilap orion personal use;
+  height: 70px;
+  width: 100%;
+  top: 0;
+  position: fixed;
+
+}
+
+#chiq {
+  font-family: zilap orion personal use;
+  color: #FF7D41;
+  background-color: white;
+  float: left;
+  padding-left: 10px;
+}
+
+#auth {
+  float: right;
+  padding-right: 10px;
+
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #FF7D41;
+}
+
+#local {
+  font-family: SF Pro Display;
+  font-weight: bold;
+  font-size: 36px;
+  color: #FF7D41;
+  margin-top: 50px;
+  line-height: 0
+}
+
+#done {
+  font-family: SF Pro Display;
+  font-weight: bold;
+  font-size: 36px;
+  color: white;
+  line-height: 0;
+}
+
+.brand {
+  position: relative;
+  left: 800px;
+  top: 260px;
 }
