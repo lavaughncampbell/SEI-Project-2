@@ -8,14 +8,15 @@ const Profile = require('../models/profile')
 // PROFILE ROUTE //
 
   // Profile form
-router.get('/', async (req, res, next) => {
+router.get('/profile', async (req, res, next) => {
   try {
-    res.send('HELLO')
+    res.render('users/new.ejs')
   }
   catch(err) {
     next(err)
   }
 })
+
 
 
 module.exports = router
