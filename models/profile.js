@@ -21,7 +21,7 @@ const profileSchema = new mongoose.Schema({
   areYouDeveloper: {
     type: Boolean,
     required: true
-  }
+  },
 // DEVELOPER MODEL
   languages: {
     type: String

@@ -1,0 +1,38 @@
+<%- include('../partials/header.ejs') %>
+
+<body onload="login()">
+
+    <div class="form-box">
+      <h3>ChiQuery Profile</h3>
+      <form method="POST" action="/users/new" id="profile" class="input-group">
+        <input
+          type="text"
+          class="input-field"
+          name="contact-name"
+          placeholder="Contact Name">
+        <input
+          type="text"
+          class="input-field"
+          name="business-name"
+          placeholder="Business Name">
+        <input
+          type="text"
+          class="input-field"
+          name="location"
+          placeholder="Location">
+        <input
+          type="checkbox"
+          class="input-field"
+          name="checkbox"
+          placeholder="Are you a developer?">
+        <input
+          type="text"
+          class="input-field"
+          name="languages"
+          placeholder="Languages">
+        <button
+          type="submit"
+          class="submit-btn">Log In</button>
+      </form>
+
+<%- include('../partials/footer.ejs') %>

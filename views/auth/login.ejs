@@ -1,5 +1,7 @@
 <%- include('../partials/header.ejs') %>
 
+<body onload="login()">
+
   <h3>Join ChiQuery</h3>
     <div class="form-box">
       <div class="button-box">
@@ -13,7 +15,7 @@
           class="toggle-btn"
           onclick="register()">Register</button>
       </div>
-      <form id="login" class="input-group">
+      <form method="POST" action="/auth/login" id="login" class="input-group">
         <input
           type="email"
           class="input-field"
@@ -29,7 +31,7 @@
           type="submit"
           class="submit-btn">Log In</button>
       </form>
-         <form id="register" class="input-group">
+         <form method="POST" action="/auth/join" id="register" class="input-group">
         <input
           type="email"
           class="input-field"

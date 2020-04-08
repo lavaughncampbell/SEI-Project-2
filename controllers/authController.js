@@ -16,7 +16,6 @@ router.get('/join', (req, res) => {
 router.post('/join', async (req, res, next) => {
 	try {
 		// create a user in the database
-		console.log(req.body);
 		 const desiredEmail = req.body.email
 		 const desiredPassword = req.body.password
 		 const emailWithThisEmail = await User.findOne({
@@ -39,15 +38,16 @@ router.post('/join', async (req, res, next) => {
 		 	// create the user
 		 	const createdUser = await User.create({
 		 		email: desiredEmail,
-		 		password: desiredPassword
+		 		password: hashedPassword
 		 	})
 		 	req.session.loggedIn = true
 		 	req.session.userId = createdUser._id
 		 	req.session.email = createdUser.email
+		 	req.session.password = createdUser.password
 		 	req.session.message = `${createdUser.email}`
 		 	console.log(createdUser);
 		 	req.session.message = `Hello, ${createdUser.email} thanks for joining!`
-		 	res.redirect('/') // will need message saying somethng like, "welcome back (username)"
+		 	res.redirect('/profile') // will need message saying somethng like, "welcome back (username)"
 		 	// res.status(201).send("registered and logged in as " + req.session.email)
 		 }
 	}
@@ -66,6 +66,7 @@ router.post('/join', async (req, res, next) => {
 	// Login Form
 router.get('/login', (req, res) => {
   	res.render('auth/login.ejs')
+  	message: ""
 })
 
 	// Login User
