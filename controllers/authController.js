@@ -66,7 +66,7 @@ router.post('/join', async (req, res, next) => {
 	// Login Form
 router.get('/login', (req, res) => {
   	res.render('auth/login.ejs')
-  	message: ""
+  	// message: ""
 })
 
 	// Login User
@@ -91,11 +91,11 @@ router.post('/login', async (req, res, next) => {
   		if(loginInfoIsValid) {
   			// log them in sessions
   			req.session.loggedIn = true
-  			req.session.userId = user_id
+  			req.session.userId = user._id
   			req.session.email = user.email
 
   			// set message
-  			req.session.message = `Welcome back ${desiredEmail}!`
+  			req.session.message = `Welcome back ${user.email}!`
   			// redirect to
   			res.redirect('/')
   		} else {
@@ -113,7 +113,7 @@ router.post('/login', async (req, res, next) => {
 
 // <-------------------------------------> //
 // LOG OUT ROUTE
-router.get('/logout', async (req, res, next) => {
+router.get('/logout', async (req, res) => {
   // destroy the session to log user out
   await req.session.destroy()
   res.redirect('/auth/login')
