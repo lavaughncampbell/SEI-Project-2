@@ -32,7 +32,7 @@ router.post('/join', async (req, res, next) => {
 		 // email is available
 		 else {
 
-		 	// encryp the passwordwith bcrypt.
+		 	// encryp the password with bcrypt.
 		 	const salt = bcrypt.genSaltSync(10)
 		 	const hashedPassword = bcrypt.hashSync(desiredPassword, salt)
 		 	// create the user
@@ -73,8 +73,11 @@ router.get('/login', (req, res) => {
 router.post('/login', async (req, res, next) => {
   try {
   	// is there a user with this email?
-  	const user = await User.findOne({ email: req.body.email })
+  		console.log(req.body);
+  		const loginEmail = req.body.email
 
+  		const user = await User.findOne({ email: loginEmail })
+  		console.log(req.body);
   	// if not
   	if(!user) {
   		// email does not exist
