@@ -6,56 +6,43 @@
     <div class="form-box">
       <div class="button-box">
         <div id="btn"></div>
-        <button 
-          type="button" 
-          class="toggle-btn" 
+        <button
+          type="button"
+          class="toggle-btn"
           onclick="register()">Register</button>
-        <button 
-          type="button" 
-          class="toggle-btn" 
+        <button
+          type="button"
+          class="toggle-btn"
           onclick="login()">Log In</button>
       </div>
       <form method="POST" action="/auth/join" id="register" class="input-group">
-        <input 
-          type="name" 
-          class="input-field" 
-          name="name" 
-          placeholder="Name" 
-          required>
-        <input 
-          type="email" 
-          class="input-field" 
-          name="email" 
-          placeholder="Enter Email" 
-          required>
-        <input 
-          type="password" 
-          class="input-field" 
-          name="password" 
-          placeholder="Enter Password" 
-          required>
-<!--         <label for="areYouDeveloper">Are you a Developer?</label>
-        <input 
-          id="checkbox"
-          type="checkbox" 
+        <input
+          type="email"
           class="input-field"
-          name="areYouDeveloper"
-          required> -->
+          name="email"
+          placeholder="Enter Email"
+          required>
+        <input
+          type="password"
+          class="input-field"
+          name="password"
+          placeholder="Enter Password"
+          required>
         <button class="submit-btn">Register</button>
       </form>
 
       <form method="POST" action="/auth/join" id="login" class="input-group">
-        <input 
-          type="name" 
-          class="input-field" 
-          name="name" 
-          placeholder="Enter Name" 
+        <input
+          type="email"
+          class="input-field"
+          name="email"
+          placeholder="Enter Email"
           required>
-        <input 
-          type="password" 
-          class="input-field" 
-          name="password" 
-          placeholder="Enter Password" 
+        <input
+          type="password"
+          class="input-field"
+          name="password"
+          placeholder="Enter Password"
           required>
         <button class="submit-btn">Log In</button>
       </form>
