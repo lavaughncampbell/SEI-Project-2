@@ -31,7 +31,6 @@ router.post('/join', async (req, res, next) => {
 		 }
 		 // email is available
 		 else {
-
 		 	// encryp the password with bcrypt.
 		 	const salt = bcrypt.genSaltSync(10)
 		 	const hashedPassword = bcrypt.hashSync(desiredPassword, salt)
@@ -99,7 +98,7 @@ router.post('/login', async (req, res, next) => {
   			// set message
   			req.session.message = `Welcome back ${user.email}!`
   			// redirect to
-  			res.redirect('/user/profile')
+  			res.redirect('/user/home')
   		} else {
   			console.log("bad password");
   			// message

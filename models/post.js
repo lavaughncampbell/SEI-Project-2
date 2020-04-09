@@ -12,11 +12,16 @@ const postSchema = new mongoose.Schema({
 		type: Number,
 		requred: true
 	},
+	description: {
+		type: String,
+	},
 	profile: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'Profile'
 		// required: true,
 	}
+
+
 })
 const Post = mongoose.model('Post', postSchema)
 module.exports = Post
