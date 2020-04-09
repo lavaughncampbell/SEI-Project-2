@@ -9,7 +9,7 @@ const postSchema = new mongoose.Schema({
 		requred: true
 	},
 	budget: {
-		type: Number,
+		type: String,
 		requred: true
 	},
 	description: {

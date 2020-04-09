@@ -33,7 +33,11 @@ router.post('/jobPost', async (req, res, next) => {
 			// need to put usedId to attach to user
 		})
 		req.session.title = postToCreate.title
-		req.session.message = `${postTitle} successfully added post title`
+		req.session.experience = postToCreate.experience
+		req.session.budget = postToCreate.budget
+		req.session.description = postToCreate.description
+		console.log(postToCreate);
+		req.session.message = `${postToCreate.experience} successfully added post`
 		res.redirect('/user/userHome.ejs')
 	} 
 	catch(err) {
@@ -43,5 +47,8 @@ router.post('/jobPost', async (req, res, next) => {
 
 
 
-
 module.exports = router
+
+
+
+
