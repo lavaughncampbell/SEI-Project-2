@@ -214,3 +214,31 @@ h2 {
   right: 300px;
   top: 135px;
 }
+
+.chi-profile {
+  font-family: SF Pro Display;
+  color: #FF7D41;
+  text-align: center;
+}
+
+.input-group-new {
+  top: 100px;
+  position: absolute;
+  width: 280px;
+  transition: .5s
+}
+
+.submit-btn-profile {
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  background: linear-gradient(to right, #ff105f, #ffad06);
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+  left: 50px;
+  margin-left: 71px;
+  margin-top: 30px;
+}
