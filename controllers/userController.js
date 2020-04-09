@@ -33,15 +33,16 @@ router.post('/new', async (req, res, next) => {
 			location: desiredLocation,
 			industry: desiredIndustry,
 			areYouDeveloper: desiredAreYouDeveloper,
-			languages: desiredLanguages
+			languages: desiredLanguages,
+      user: req.session.userId
 		})
-    req.session.contactName = createdProfile.contactName
-    req.session.businessName = createdProfile.businessName
-    req.session.location = createdProfile.location
-    req.session.industry = createdProfile.industry
-    req.session.areYouDeveloper = createdProfile.areYouDeveloper
-    req.session.languages = createdProfile.languages
-    req.session.message = `${createdProfile.businessName}`
+    // req.session.contactName = createdProfile.contactName
+    // req.session.businessName = createdProfile.businessName
+    // req.session.location = createdProfile.location
+    // req.session.industry = createdProfile.industry
+    // req.session.areYouDeveloper = createdProfile.areYouDeveloper
+    // req.session.languages = createdProfile.languages
+    // req.session.message = `${createdProfile.businessName}`
     console.log(createdProfile);
     req.session.message = `Hello, ${createdProfile.businessName} nice profile!`
 	  res.redirect('/user/home')
@@ -51,15 +52,19 @@ router.post('/new', async (req, res, next) => {
 	}
 })
 
-
 router.get('/home', async (req, res, next) => {
   try {
-    const foundProfile = Profile.find()
+    const currentUserId = req.session.userId
+    const foundProfile = await Profile.find({ user: currentUserId })
+    // const foundBusinessName = req.body.businessName
+    // console.log(`\nthis is rec.session.user`, req.session);
+    console.log(`\nthis is found profile`, foundProfile);
     res.render('user/userHome.ejs', {
       profile: foundProfile,
-      profile: req.session.businessName
+      // profile: businessName
+
     })
-    console.log(req.session.businessName);
+    // console.log(req.session.businessName);
   }
   catch(err) {
     next(err)
@@ -69,3 +74,10 @@ router.get('/home', async (req, res, next) => {
 
 
 module.exports = router
+
+
+
+
+
+
+

@@ -28,8 +28,9 @@ const profileSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    // required: true // profiles must have a user
+    required: true // profiles must have a user
   }
+  
   // skills: [{
   //  languages: String,
   //  type: String,
