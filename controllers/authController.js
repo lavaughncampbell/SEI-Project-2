@@ -47,7 +47,7 @@ router.post('/join', async (req, res, next) => {
 		 	req.session.message = `${createdUser.email}`
 		 	console.log(createdUser);
 		 	req.session.message = `Hello, ${createdUser.email} thanks for joining!`
-		 	res.redirect('/users/profile') // will need message saying somethng like, "welcome back (username)"
+		 	res.redirect('/user/profile') // will need message saying somethng like, "welcome back (username)"
 		 }
 	}
 	catch(err) {
@@ -99,7 +99,7 @@ router.post('/login', async (req, res, next) => {
   			// set message
   			req.session.message = `Welcome back ${user.email}!`
   			// redirect to
-  			res.redirect('/')
+  			res.redirect('/user/profile')
   		} else {
   			console.log("bad password");
   			// message

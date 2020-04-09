@@ -10,15 +10,17 @@ const Profile = require('../models/profile')
   // Profile form
 router.get('/profile', async (req, res, next) => {
   try {
-    res.render('users/new.ejs')
+    res.render('user/new.ejs')
   }
   catch(err) {
     next(err)
   }
 })
 
-router.post('/profile', async (req, res, next) => { 
+// Profile Create
+router.post('/new', async (req, res, next) => {
 	try {
+    // create a profile in the database
 		const desiredContactName = req.body.contactName
 		const desiredBusinessName = req.body.businessName
 		const desiredLocation = req.body.location
@@ -33,10 +35,35 @@ router.post('/profile', async (req, res, next) => {
 			areYouDeveloper: desiredAreYouDeveloper,
 			languages: desiredLanguages
 		})
-	} 
+    req.session.contactName = createdProfile.contactName
+    req.session.businessName = createdProfile.businessName
+    req.session.location = createdProfile.location
+    req.session.industry = createdProfile.industry
+    req.session.areYouDeveloper = createdProfile.areYouDeveloper
+    req.session.languages = createdProfile.languages
+    req.session.message = `${createdProfile.businessName}`
+    console.log(createdProfile);
+    req.session.message = `Hello, ${createdProfile.businessName} nice profile!`
+	  res.redirect('/user/home')
+}
 	catch(err) {
 		next(err)
 	}
+})
+
+
+router.get('/home', async (req, res, next) => {
+  try {
+    const foundProfile = Profile.find()
+    res.render('user/userHome.ejs', {
+      profile: foundProfile,
+      profile: req.session.businessName
+    })
+    console.log(req.session.businessName);
+  }
+  catch(err) {
+    next(err)
+  }
 })
 
 

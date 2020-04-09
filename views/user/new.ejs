@@ -4,26 +4,31 @@
 
     <div class="form-box">
       <h3>ChiQuery Profile</h3>
-      <form method="POST" action="/users/new" id="profile" class="input-group">
+      <form method="POST" action="/user/new" id="profile" class="input-group">
         <input
           type="text"
           class="input-field"
-          name="contact-name"
+          name="contactName"
           placeholder="Contact Name">
         <input
           type="text"
           class="input-field"
-          name="business-name"
+          name="businessName"
           placeholder="Business Name">
         <input
           type="text"
           class="input-field"
           name="location"
           placeholder="Location">
+          <input
+          type="text"
+          class="input-field"
+          name="industry"
+          placeholder="industry">
         <input
           type="checkbox"
           class="input-field"
-          name="checkbox"
+          name="areYouDeveloper"
           placeholder="Are you a developer?">
         <input
           type="text"
@@ -31,8 +36,7 @@
           name="languages"
           placeholder="Languages">
         <button
-          type="submit"
-          class="submit-btn">Update</button>
+        class="submit-btn">Add Profile</button>
       </form>
     </div>
 

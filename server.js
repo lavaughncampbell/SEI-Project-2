@@ -46,7 +46,7 @@ server.use('/auth', authController)
 
 
 const userController = require('./controllers/userController')
-server.use('/users', userController)
+server.use('/user', userController)
 
 
 server.get('/', (req, res) => {
