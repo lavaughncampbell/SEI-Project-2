@@ -66,7 +66,7 @@ router.post('/join', async (req, res, next) => {
 	// Login Form
 router.get('/login', (req, res) => {
   	res.render('auth/login.ejs')
-  	// message: ""
+  	message: ""
 })
 
 	// Login User
