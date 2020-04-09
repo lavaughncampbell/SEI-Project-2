@@ -81,6 +81,7 @@ a:hover {
 
 #hh {
   padding-right: 35px;
+  padding-left: 35px;
 }
 
 #kk {
@@ -242,3 +243,58 @@ h2 {
   margin-left: 71px;
   margin-top: 30px;
 }
+
+li {
+  list-style: none;
+}
+
+.auth .sub-nav {
+  float: right;
+}
+
+nav li ul {
+  display: none;
+  background-color: #fff;
+  position: absolute;
+  padding: 10px;
+  border-radius: 0px 0px 4px 4px;
+  list-style: none;
+  width: 130px;
+  height: 70px;
+}
+
+
+nav li:hover ul {
+  display: block;
+}
+
+
+
+
+nav li ul li {
+  display: block;
+  width: 180px;
+  border-radius: 0px 0px 4px 4px;
+}
+
+
+nav li ul li a {
+  display: block;
+  color: black;
+  font-family: SF Pro Display;
+  font-size: 12px;
+  display: flex;
+  justify-content: left;
+  padding-left: 20px;
+  text-decoration: none;
+  padding-top: 5px;
+}
+
+nav li ul li a:hover {
+  color: #FF7D41;
+  display: block;
+}
+
+
+
+

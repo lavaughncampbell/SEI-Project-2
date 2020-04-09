@@ -48,6 +48,8 @@ server.use('/auth', authController)
 const userController = require('./controllers/userController')
 server.use('/user', userController)
 
+const postController = require('./controllers/postController')
+server.use('/post', postController)
 
 server.get('/', (req, res) => {
   res.render('home.ejs')

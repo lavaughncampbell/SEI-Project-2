@@ -4,28 +4,18 @@ const postSchema = new mongoose.Schema({
 		type: String,
 		requred: true
 	},
-	body: { // possible placeholder "what are you looking for? website help/update, etc."
-		type: String,
-		requred: true
-	},
 	experience: {
 		type: String,
 		requred: true
 	},
-	languages: { // languages the business(user) needs for their posting
-		type: String,
-		requred: true
-	}
-	// skills: [{
-	// }],
 	budget: {
 		type: Number,
 		requred: true
 	},
-	business: {
+	profile: {
 		type: mongoose.Schema.Types.ObjectId,
-		required: true,
-		ref: 'Business'
+		ref: 'Profile'
+		// required: true,
 	}
 })
 const Post = mongoose.model('Post', postSchema)
