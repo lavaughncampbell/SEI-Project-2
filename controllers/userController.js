@@ -44,7 +44,7 @@ router.post('/new', async (req, res, next) => {
     // req.session.languages = createdProfile.languages
     // req.session.message = `${createdProfile.businessName}`
     console.log(createdProfile);
-    req.session.message = `Hello, ${createdProfile.businessName} nice profile!`
+    req.session.message = `Hello, ${createdProfile} nice profile!`
 	  res.redirect('/user/home')
 }
 	catch(err) {
@@ -55,14 +55,17 @@ router.post('/new', async (req, res, next) => {
 router.get('/home', async (req, res, next) => {
   try {
     const currentUserId = req.session.userId
+    // const desiredTitle = req.body.title
     const foundProfile = await Profile.find({ user: currentUserId })
+    // const foundPost = await Post.find({ title: desiredTitle })
+
+    // console.log(foundPost);
     // const foundBusinessName = req.body.businessName
     // console.log(`\nthis is rec.session.user`, req.session);
     console.log(`\nthis is found profile`, foundProfile);
     res.render('user/userHome.ejs', {
-      profile: foundProfile,
-      // profile: businessName
-
+      profile: foundProfile
+      // post: foundPost
     })
     // console.log(req.session.businessName);
   }
@@ -73,8 +76,9 @@ router.get('/home', async (req, res, next) => {
 
 
 
-module.exports = router
 
+
+module.exports = router
 
 
 

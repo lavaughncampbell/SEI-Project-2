@@ -295,6 +295,16 @@ nav li ul li a:hover {
   display: block;
 }
 
+.post-style a {
+  visibility: visible;
+  display: block;
+  color: black;
+}
 
+.post-style a:hover {
+  display: block;
+  visibility: visible;
+  color: blue;
+}
 
 

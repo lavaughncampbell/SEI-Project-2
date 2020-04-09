@@ -15,10 +15,10 @@ const postSchema = new mongoose.Schema({
 	description: {
 		type: String,
 	},
-	profile: {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: 'Profile'
-		// required: true,
+	user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true // profiles must have a user
 	}
 
 

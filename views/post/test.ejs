@@ -1,10 +1,16 @@
 <%- include('../partials/header.ejs') %>
-
   <div>
     <a href="/post/jobPost"><button id="postJobButton">Post a Job</button></a>
   </div>
     <div class="user-form-box">
       <h2>My Postings</h2>
+      <div class="post-style">
+      <% foundPost.forEach(p => { %>
+        <div><a href="#"><%= p.title %></a></div>
+        <div><a href="/jobPost/<%= p.id %>/edit">Edit</a>
+  </div>
+      <% })%>
+      <div>
     </div>
     <div class="second-form-box">
       <h2>How it works</h2>

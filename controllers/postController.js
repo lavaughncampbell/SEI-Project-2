@@ -8,7 +8,7 @@ const Post = require('../models/post')
 
 // PROFILE ROUTE //
 
-  // Profile form
+  // Post form
 router.get('/jobPost', async (req, res, next) => {
   try {
     res.render('post/jobPost.ejs')
@@ -18,6 +18,7 @@ router.get('/jobPost', async (req, res, next) => {
   }
 })
 
+// Post Create
 router.post('/jobPost', async (req, res, next) => {
 	try {
 
@@ -29,7 +30,8 @@ router.post('/jobPost', async (req, res, next) => {
 			title: postTitle,
 			experience: postExperience,
 			budget: postBudget,
-			description: postDescription
+			description: postDescription,
+      user: req.session.userId
 			// need to put usedId to attach to user
 		})
 		req.session.title = postToCreate.title
@@ -37,12 +39,38 @@ router.post('/jobPost', async (req, res, next) => {
 		req.session.budget = postToCreate.budget
 		req.session.description = postToCreate.description
 		console.log(postToCreate);
-		req.session.message = `${postToCreate.experience} successfully added post`
-		res.redirect('/user/home')
-	} 
+		req.session.message = `${postToCreate} successfully added post`
+		res.redirect('/post/test')
+	}
 	catch(err) {
 		next(err)
 	}
+})
+
+router.get('/test', async (req, res, next) => {
+  try {
+    const currentUserId = req.session.userId
+    const foundPost = await Post.find({ user: currentUserId })
+    console.log(`\nthis is found post`, foundPost);
+    res.render('post/test.ejs', {foundPost}
+      )
+  }
+  catch(err) {
+    next(err)
+  }
+})
+
+
+// UPDATE ROUTE //
+router.put('/jobPost/:id/edit', async (req, res, next) => {
+  try {
+    // const foundJobPost = await Post.findById(req.params.id)
+    // const foundJobs = await User.findById({})
+    res.send('hello')
+  }
+  catch(err) {
+    next(err)
+  }
 })
 
 
