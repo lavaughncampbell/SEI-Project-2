@@ -5,7 +5,7 @@
         <h3>Edit Job</h3>
       </div>
 
-      <form class="input-group-new" id="job-post" method="POST" action="/post/jobPost/?_method=PUT">
+      <form class="input-group-new" id="job-post" method="POST" action="/post/jobPost/<%= post.id %>?_method=PUT">
 
       	<label for="title">Edit Job Title</label>
         <input
