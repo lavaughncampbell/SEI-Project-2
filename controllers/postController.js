@@ -70,7 +70,7 @@ router.get('/jobPost/:id/edit', async (req, res, next) => {
   try {
     const currentUserId = req.session.userId
     const postToEdit = await Post.findById(req.params.id)
-    console.log(`\nthis is post we want to edit`, postToEdit);
+    // console.log(`\nthis is post we want to edit`, postToEdit);
 
     res.render('post/edit.ejs', {
     	post: postToEdit,
@@ -84,16 +84,23 @@ router.get('/jobPost/:id/edit', async (req, res, next) => {
 
 
 // UPDATE ROUTE //
-// router.get('/jobPost/:id/edit', async (req, res, next) => {
-//   try {
-//     // const foundJobPost = await Post.findById(req.params.id)
-//     // const foundJobs = await User.findById({})
-//     res.send('hello')
-//   }
-//   catch(err) {
-//     next(err)
-//   }
-// })
+
+router.put('/jobPost/:id', async (req, res, next) => {
+  try {
+  	const currentUserId = req.session.userId
+  	const postToUpdate = await Post.findByIdAndUpdate(
+  		req.params.id,
+  		req.body,
+  		{new: true}
+  		)
+  	res.redirect('/jobPost/:id')
+    // const foundJobPost = await Post.findById(req.params.id)
+    // const foundJobs = await User.findById({})
+  }
+  catch(err) {
+    next(err)
+  }
+})
 
 
 

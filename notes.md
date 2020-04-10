@@ -26,6 +26,7 @@ Edit Job Post — Incomplete (edit ROUTE) -- do it today
 Update Job Post — Incomplete (update ROUTE) -- do it today
 All Jobs From Every User Index — Incomplete (Index ROUTE) --?? 
 Show Job Page — Incomplete (show ROUTE)  -- working, but needs more style
+ // also needs to have teh rest of the jopb posting info in there
 Delete Job Post Page — Incomplete (delete ROUTE) 
 Developer Checkbox Register — Incomplete 
 Developer can checkout all jobs index — Incomplete
