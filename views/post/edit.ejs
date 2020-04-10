@@ -1,0 +1,53 @@
+<%- include('../partials/header.ejs') %>
+
+    <div class="form-box">
+      <div class="job-post">
+        <h3>Edit Job</h3>
+      </div>
+
+      <form method="POST" action="/post/jobPost" id="job-post" class="input-group-new">
+
+      	<label for="title">Job Title</label>
+        <input
+          type="text"
+          name="title"
+          placeholder="Title of job">
+
+        <div>
+		<label for="experience">Level of Experience</label>
+			<select id="experience" name="experience">
+			  <option value="entry-level">Entry Level</option>
+			  <option value="mid-level">Mid Level</option>
+			  <option value="senior">Senior Engineer</option>
+			  <option value="principal">Principal Engineer</option>
+			</select>
+		</div>
+
+        <div>
+
+		<label for="budget">Budget:</label>
+			<select id="budget" name="budget">
+			  <option value="low">Below $1,000</option>
+			  <option value="mid">$1,000 - $5,000</option>
+			  <option value="high">Above $5,000</option>
+			</select>
+
+		</div>
+
+        <div>
+
+			<label for="description">Job Description:</label>
+				<textarea
+					id="description"
+					name="description"
+					rows="4" 
+					cols="50" 
+					placeholder="Job Description"> Write your job details here: </textarea>
+		</div>
+
+        <button class="submit-job-post">Post Job</button>
+      </form>
+
+
+
+<%- include('../partials/footer.ejs') %>

@@ -50,11 +50,10 @@ router.post('/jobPost', async (req, res, next) => {
 router.get('/jobPost/:id', async (req, res, next) => {
   try {
   	const currentUserId = req.session.userId
-    const postTitle = req.body.title
+    // const postTitle = req.body.title
     const showPost = await Post.findById(req.params.id)
       // .populate('user')
       // .populate('comments.user')
-      
     console.log(`\nthis is show post`, showPost);
     res.render('post/show.ejs', { 
       post: showPost,
@@ -67,32 +66,34 @@ router.get('/jobPost/:id', async (req, res, next) => {
 })
 
 
-// router.get('/', async (req, res, next) => {
-//   try {
-//     const currentUserId = req.session.userId
-//     const foundPost = await Post.find({ user: currentUserId })
-//     console.log(`\nthis is found post`, foundPost);
-
-//     res.render('user/userHome.ejs', {foundPost}
-//       )
-//   }
-//   catch(err) {
-//     next(err)
-//   }
-// })
-
-
-// UPDATE ROUTE //
 router.get('/jobPost/:id/edit', async (req, res, next) => {
   try {
-    // const foundJobPost = await Post.findById(req.params.id)
-    // const foundJobs = await User.findById({})
-    res.send('hello')
+    const currentUserId = req.session.userId
+    const postToEdit = await Post.findById(req.params.id)
+    console.log(`\nthis is post we want to edit`, postToEdit);
+
+    res.render('post/edit.ejs', {
+    	post: postToEdit,
+    	indexOfPostToEdit: req.params.id
+    })
   }
   catch(err) {
     next(err)
   }
 })
+
+
+// UPDATE ROUTE //
+// router.get('/jobPost/:id/edit', async (req, res, next) => {
+//   try {
+//     // const foundJobPost = await Post.findById(req.params.id)
+//     // const foundJobs = await User.findById({})
+//     res.send('hello')
+//   }
+//   catch(err) {
+//     next(err)
+//   }
+// })
 
 
 
