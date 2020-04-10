@@ -9,7 +9,14 @@ const bcrypt = require('bcrypt')
 
 	// Registration form
 router.get('/join', (req, res) => {
-  	res.render('auth/join.ejs')
+
+  	// changes made while lesson still going on
+    let messageToDisplay = req.session.message
+    req.session.message = ''
+
+    res.render('auth/join.ejs', {
+      message: messageToDisplay
+    })
 })
 
 	// Registration Create User
@@ -27,7 +34,10 @@ router.post('/join', async (req, res, next) => {
 		 	// tell them no email is taken
 		 	console.log("email exists");
 		 	req.session.message = `Email ${desiredEmail} already taken`
-		 	res.send('email exists -- see terminal')
+
+      //changes below, from res.send to...
+
+		 	res.redirect('/auth/join')
 		 }
 		 // email is available
 		 else {
@@ -42,11 +52,12 @@ router.post('/join', async (req, res, next) => {
 		 	req.session.loggedIn = true
 		 	req.session.userId = createdUser._id
 		 	req.session.email = createdUser.email
-		 	req.session.password = createdUser.password
-		 	req.session.message = `${createdUser.email}`
-		 	console.log(createdUser);
-		 	req.session.message = `Hello, ${createdUser.email} thanks for joining!`
-		 	res.redirect('/user/profile') // will need message saying somethng like, "welcome back (username)"
+      // change below , comment out
+		 	// req.session.password = createdUser.password
+		 	// req.session.message = `${createdUser.email}`
+		 	// console.log(createdUser);
+		 	req.session.message = `Hi ${createdUser.email} and welcome to ChiQuery! Thanks for joining! Fill out your profile to get the most views!`
+		 	res.redirect('/user/profile')
 		 }
 	}
 	catch(err) {
@@ -64,30 +75,37 @@ router.post('/join', async (req, res, next) => {
 	// Login Form
 router.get('/login', (req, res) => {
   	res.render('auth/login.ejs')
-  	message: ""
+    // commented out below
+
+  	// message: ""
 })
 
 	// Login User
 router.post('/login', async (req, res, next) => {
   try {
   	// is there a user with this email?
-  		console.log(req.body);
-  		const loginEmail = req.body.email
 
+    // commented out below
+  		// console.log(req.body);
+
+  		const loginEmail = req.body.email
   		const user = await User.findOne({ email: loginEmail })
-  		console.log(req.body);
+
+      // commetned out below
+  		// console.log(req.body);
+
   	// if not
   	if(!user) {
   		// email does not exist
   		console.log("bad email");
   		// message bad email or password
-  		req.session.message = "Invalid email or password."
+  		req.session.message = "Invalid email or password. Please try again."
   		// redirect to login page so they can reattempt
   		res.redirect('/auth/login')
-  	} else {
+  	} 
+    else {
   		// check if their password is good
   		const loginInfoIsValid = bcrypt.compareSync(req.body.password, user.password)
-
   		// if password is good
   		if(loginInfoIsValid) {
   			// log them in sessions
@@ -96,13 +114,14 @@ router.post('/login', async (req, res, next) => {
   			req.session.email = user.email
 
   			// set message
-  			req.session.message = `Welcome back ${user.email}!`
+  			req.session.message = `Welcome back to ChiQuery ${user.email}!`
   			// redirect to
   			res.redirect('/user/home')
-  		} else {
+  		} 
+      else {
   			console.log("bad password");
   			// message
-  			req.session.message = "Invalid email or password."
+  			req.session.message = "Invalid email or password. Please try again."
   			res.redirect('/auth/login')
   		}
   	}
