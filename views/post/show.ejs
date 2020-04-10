@@ -2,8 +2,6 @@
   <h2>"hello"</h2>
 
 
-
-
     <div class="form-box">
       <div class="job-post">
         <h3>Show This Job</h3>
@@ -12,18 +10,19 @@
 <!--       <form method="POST" action="/post/jobPost" id="job-post" class="input-group-new"> -->
 
     <h2><%= post.title %></h2>
+    <h2><%= post.experience %></h2>
+    <div><a href="/jobPost/<%= post.id %>/edit">Edit</a>
+    <div><a href="/jobPost/<%= post.id %>/delete">Delete</a>
        <!--  <input
           type="text"
           name="title"
           placeholder="Title of job"> -->
-    <h2><%= post.experience %></h2>
 <!--       <select id="experience" name="experience">
         <option value="entry-level">Entry Level</option>
         <option value="mid-level">Mid Level</option>
         <option value="senior">Senior Engineer</option>
         <option value="principal">Principal Engineer</option>
       </select> -->
-  </div>
 <!-- 
         <div>
 
