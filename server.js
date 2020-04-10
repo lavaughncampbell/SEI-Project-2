@@ -3,7 +3,9 @@ const express = require('express')
 const server = express()
 const bodyParser = require('body-parser')
 const session = require('express-session')
+const methodOverride = require('method-override')
 const PORT = process.env.PORT
+
 
 
 // db connection
@@ -19,6 +21,9 @@ server.use(session({
   resave: false,
   saveUninitialized: false
 }))
+
+server.use(methodOverride("_method"))
+
 
 server.use((req, res, next) => {
   res.locals.otherTestMessage = "I set this on res.locals in server.js"

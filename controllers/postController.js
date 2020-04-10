@@ -94,10 +94,10 @@ router.put('/jobPost/:id', async (req, res, next) => {
         experience: req.body.experience,
         budget: req.body.budget,
         description: req.body.description
-      },
-      {new: true }
-      )
-  	res.redirect('/post/jobPost/:id')
+      })
+      // {new: true }
+    console.log(postToUpdate);
+  	res.redirect('/user/home')
     // const foundJobPost = await Post.findById(req.params.id)
     // const foundJobs = await User.findById({})
   }
