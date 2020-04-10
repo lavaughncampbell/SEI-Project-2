@@ -309,4 +309,19 @@ nav li ul li a:hover {
   color: blue;
 }
 
+#all-jobs {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  right: 20px;
+  margin: 6% auto;
+  background: red;
+  padding: 5px;
+  overflow: hidden;
+}
+
+
+
+
+
 

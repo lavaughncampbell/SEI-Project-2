@@ -1,17 +1,25 @@
 <%- include('../partials/header.ejs') %>
 
-  <h2>ALL JOB POSTS</h2>
+    <div class="form-box">
+      <div class="job-post">
+        <h3>All Jobs</h3>
+      </div>
+
 
   <ul>
         <% post.forEach((post) => { %>
           <li>
             <a href="/post/jobPost/<%= post.id %>">
-
-            	<%= post.title %>
+            <div id="all-jobs">
             	<%= post.user.email %>
+            	<%= post.title %>
+            	</a>
+            	<%= post.experience %>
+            	<%= post.budget %>
+            	<%= post.description %>            	
+            </div>
             		
 
-            	</a>
 
           </li>
         
