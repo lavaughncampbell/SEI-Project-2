@@ -1,31 +1,33 @@
 <%- include('../partials/header.ejs') %>
+  <h2>"hello"</h2>
+
+
+
 
     <div class="form-box">
       <div class="job-post">
-        <h3>Edit This Job</h3>
+        <h3>Show This Job</h3>
       </div>
 
-      <form method="POST" action="/post/jobPost" id="job-post" class="input-group-new">
+<!--       <form method="POST" action="/post/jobPost" id="job-post" class="input-group-new"> -->
 
-        <label for="title">Job Title</label>
-        <input
+    <h2><%= post.title %></h2>
+       <!--  <input
           type="text"
           name="title"
-          placeholder="Title of job">
-
-        <div>
-    <label for="experience">Level of Experience</label>
-      <select id="experience" name="experience">
+          placeholder="Title of job"> -->
+    <h2><%= post.experience %></h2>
+<!--       <select id="experience" name="experience">
         <option value="entry-level">Entry Level</option>
         <option value="mid-level">Mid Level</option>
         <option value="senior">Senior Engineer</option>
         <option value="principal">Principal Engineer</option>
-      </select>
-    </div>
-
+      </select> -->
+  </div>
+<!-- 
         <div>
 
-    <label for="budget">Budget:</label>
+    <label for="budget">   <  post.budget    </label>
       <select id="budget" name="budget">
         <option value="low">Below $1,000</option>
         <option value="mid">$1,000 - $5,000</option>
@@ -36,7 +38,7 @@
 
         <div>
 
-      <label for="description">Job Description:</label>
+      <label for="description">   post.description %></label>
         <textarea
           id="description"
           name="description"
@@ -48,8 +50,8 @@
         <button class="submit-job-post">Update Job</button>
       </form>
 
-<%- include('../partials/footer.ejs') %>
 
+ -->
 
 
 <%- include('../partials/footer.ejs') %>

@@ -29,17 +29,19 @@ html {
 
 }
 
-
 .auth {
   font-family: zilap orion personal use;
 }
 
 a {
-  color: white;
+  color: black;
 }
 
+/* PUT THESE BACK LATER*/
+
+
 a:hover {
-  color: #FF7D41;
+  color: blue;
 }
 
 #local {

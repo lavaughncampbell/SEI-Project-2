@@ -46,6 +46,27 @@ router.post('/jobPost', async (req, res, next) => {
 	}
 })
 
+
+router.get('/jobPost/:id', async (req, res, next) => {
+  try {
+  	const currentUserId = req.session.userId
+    const postTitle = req.body.title
+    const showPost = await Post.findById(req.params.id)
+      // .populate('user')
+      // .populate('comments.user')
+      
+    console.log(`\nthis is show post`, showPost);
+    res.render('post/show.ejs', { 
+      post: showPost,
+      indexOfPostToDelete: req.params.id
+      // userId: req.session.userId
+    })
+  } catch(err) {
+    next(err)
+  }
+})
+
+
 // router.get('/', async (req, res, next) => {
 //   try {
 //     const currentUserId = req.session.userId

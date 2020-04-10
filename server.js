@@ -44,7 +44,6 @@ server.use((req, res, next) => {
 const authController = require('./controllers/authController')
 server.use('/auth', authController)
 
-
 const userController = require('./controllers/userController')
 server.use('/user', userController)
 

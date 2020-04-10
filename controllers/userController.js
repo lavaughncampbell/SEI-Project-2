@@ -65,6 +65,7 @@ router.get('/home', async (req, res, next) => {
     // const foundBusinessName = req.body.businessName
     // console.log(`\nthis is rec.session.user`, req.session);
     console.log(`\nthis is found profile`, foundProfile);
+    console.log(`\nthis is found post`, foundPost);
     res.render('user/userHome.ejs', {
       profile: foundProfile,
       post: foundPost
@@ -76,7 +77,23 @@ router.get('/home', async (req, res, next) => {
   }
 })
 
-
+// router.get('/jobPost/:id', async (req, res, next) => {
+//   try {
+//     const currentUserId = req.session.userId
+//     const postTitle = req.body.title
+//     const showPost = await Post.find({user: currentUserId})
+//       // .populate('user')
+//       // .populate('comments.user')
+      
+//     console.log(`\nthis is show post`, showPost);
+//     res.render('post/show.ejs', { 
+//       post: showPost
+//       // userId: req.session.userId
+//     })
+//   } catch(err) {
+//     next(err)
+//   }
+// })
 
 
 
