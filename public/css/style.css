@@ -255,7 +255,7 @@ li {
 }
 
 nav li ul {
-  display: none;
+  display: block;
   background-color: #fff;
   position: absolute;
   padding: 10px;
