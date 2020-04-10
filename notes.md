@@ -35,6 +35,15 @@ Business can login and see new offer from Developer — Incomplete
 Business can click on new offer and bring them to developer off show page — Incomplete
 Business can hire developer or not hire developer from offer show page — Incomplete
 If Hire Developer can login and see new hire on their main user screen.
+flash messages need to be updated
+styling on show page needs too
+you shouldn't be able to edit/delete a post (or anything) unless its yours (res.locals thing, but not sure) -- this is on the allJobs page
+-- fix hover and hide for sub nav
+-- maybe ask TA why the fonts arent showing on my browser
+
+*******  when you log in, it brings up the logout -- we dont want to see login in the nav when yhou're logged in ********
+
+
 
 
 ——————  MVP of ChiQuery ————————

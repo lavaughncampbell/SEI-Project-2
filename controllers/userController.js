@@ -45,7 +45,7 @@ router.post('/new', async (req, res, next) => {
     // req.session.languages = createdProfile.languages
     // req.session.message = `${createdProfile.businessName}`
     console.log(createdProfile);
-    req.session.message = `Hello, ${createdProfile} nice profile!`
+    req.session.message = `Hello, ${createdProfile.contactName} nice profile!`
 	  res.redirect('/user/home')
 }
 	catch(err) {
