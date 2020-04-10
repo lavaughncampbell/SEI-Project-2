@@ -46,7 +46,7 @@ router.post('/jobPost', async (req, res, next) => {
 	}
 })
 
-
+// SHOW PAGE
 router.get('/jobPost/:id', async (req, res, next) => {
   try {
   	const currentUserId = req.session.userId
@@ -55,7 +55,7 @@ router.get('/jobPost/:id', async (req, res, next) => {
       // .populate('user')
       // .populate('comments.user')
     console.log(`\nthis is show post`, showPost);
-    res.render('post/show.ejs', { 
+    res.render('post/show.ejs', {
       post: showPost,
       indexOfPostToDelete: req.params.id
       // userId: req.session.userId
@@ -65,7 +65,7 @@ router.get('/jobPost/:id', async (req, res, next) => {
   }
 })
 
-
+// EDIT PAGE
 router.get('/jobPost/:id/edit', async (req, res, next) => {
   try {
     const currentUserId = req.session.userId
@@ -89,11 +89,13 @@ router.put('/jobPost/:id', async (req, res, next) => {
   try {
   	const currentUserId = req.session.userId
   	const postToUpdate = await Post.findByIdAndUpdate(
-  		req.params.id,
-  		req.body,
-  		{new: true}
-  		)
-  	res.redirect('/jobPost/:id')
+  		req.params.id, {
+        title: req.body.title,
+        experience: req.body.experience,
+        budget: req.body.budget,
+        description: req.body.description,
+      })
+  	res.redirect('/user/home')
     // const foundJobPost = await Post.findById(req.params.id)
     // const foundJobs = await User.findById({})
   }
