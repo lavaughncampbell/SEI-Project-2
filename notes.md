@@ -23,10 +23,11 @@ Edit Job Post — Incomplete (edit ROUTE) -- do it today
 Update Job Post — Incomplete (update ROUTE) -- do it today
 Show Job Page — Incomplete (show ROUTE)  -- working, but needs more style
 Delete Job Post Page — Incomplete (delete ROUTE)
+All Jobs From Every User Index — Incomplete (Index ROUTE) -- done
 
 
 NEEDS WORKS — INCOMPLETE
-All Jobs From Every User Index — Incomplete (Index ROUTE) --??
+
 Developer Checkbox Register — Incomplete
 Developer can checkout all jobs index — Incomplete
 Developer can make offer on job post — Incomplete
