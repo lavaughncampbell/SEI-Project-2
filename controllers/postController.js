@@ -106,6 +106,21 @@ router.put('/jobPost/:id', async (req, res, next) => {
   }
 })
 
+// DELETE ROUTE
+// author destroy route: DELETE /authors/:id
+router.delete('/jobPost/:id', async (req, res, next) => {
+  try {
+    await Post.findByIdAndRemove(req.params.id)
+
+    res.redirect('/user/home')
+  } catch(err) {
+    next(err)
+  }
+
+})
+
+
+
 
 
 module.exports = router
