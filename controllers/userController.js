@@ -56,7 +56,7 @@ router.post('/new', async (req, res, next) => {
 router.get('/home', async (req, res, next) => {
   try {
     const currentUserId = req.session.userId
-    // const desiredTitle = req.body.title
+    const postTitle = req.body.title
     const foundProfile = await Profile.find({ user: currentUserId })
     // const foundPost = await Post.find({ title: desiredTitle })
     // const currentUserId = req.session.userId

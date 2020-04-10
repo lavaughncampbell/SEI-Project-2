@@ -21,7 +21,6 @@ router.get('/jobPost', async (req, res, next) => {
 // Post Create
 router.post('/jobPost', async (req, res, next) => {
 	try {
-
 		const postTitle = req.body.title
 		const postExperience = req.body.experience
 		const postBudget = req.body.budget
@@ -47,18 +46,19 @@ router.post('/jobPost', async (req, res, next) => {
 	}
 })
 
-router.get('/test', async (req, res, next) => {
-  try {
-    const currentUserId = req.session.userId
-    const foundPost = await Post.find({ user: currentUserId })
-    console.log(`\nthis is found post`, foundPost);
-    res.render('post/test.ejs', {foundPost}
-      )
-  }
-  catch(err) {
-    next(err)
-  }
-})
+// router.get('/', async (req, res, next) => {
+//   try {
+//     const currentUserId = req.session.userId
+//     const foundPost = await Post.find({ user: currentUserId })
+//     console.log(`\nthis is found post`, foundPost);
+
+//     res.render('user/userHome.ejs', {foundPost}
+//       )
+//   }
+//   catch(err) {
+//     next(err)
+//   }
+// })
 
 
 // UPDATE ROUTE //

@@ -7,18 +7,15 @@
       <p><%= message %></p>
       <h2>My Postings</h2>
 
-
-
-      <h3>
-        for(let i = 0; i < 10; i++) {
+      <ul>
+        <% post.forEach((post) => { %>
+          <li>
+            <%= post.title %>
+          </li>
+        
+        <% }) %>
+      </ul>
           
-        }
-
-        <%= post[0].title %>
-          
-
-
-        </h3>
     </div>
     <div class="second-form-box">
       <h2>How it works</h2>
