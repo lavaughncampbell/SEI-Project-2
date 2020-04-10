@@ -40,7 +40,7 @@ router.post('/jobPost', async (req, res, next) => {
 		req.session.description = postToCreate.description
 		console.log(postToCreate);
 		req.session.message = `${postToCreate} successfully added post`
-		res.redirect('/post/test')
+		res.redirect('/user/home')
 	}
 	catch(err) {
 		next(err)
@@ -62,7 +62,7 @@ router.get('/test', async (req, res, next) => {
 
 
 // UPDATE ROUTE //
-router.put('/jobPost/:id/edit', async (req, res, next) => {
+router.get('/jobPost/:id/edit', async (req, res, next) => {
   try {
     // const foundJobPost = await Post.findById(req.params.id)
     // const foundJobs = await User.findById({})

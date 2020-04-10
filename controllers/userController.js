@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const User = require('../models/user')
 const Profile = require('../models/profile')
+const Post = require('../models/post')
 
 // <-------------------------------------> //
 
@@ -58,14 +59,15 @@ router.get('/home', async (req, res, next) => {
     // const desiredTitle = req.body.title
     const foundProfile = await Profile.find({ user: currentUserId })
     // const foundPost = await Post.find({ title: desiredTitle })
-
+    // const currentUserId = req.session.userId
+    const foundPost = await Post.find({ user: currentUserId })
     // console.log(foundPost);
     // const foundBusinessName = req.body.businessName
     // console.log(`\nthis is rec.session.user`, req.session);
     console.log(`\nthis is found profile`, foundProfile);
     res.render('user/userHome.ejs', {
-      profile: foundProfile
-      // post: foundPost
+      profile: foundProfile,
+      post: foundPost
     })
     // console.log(req.session.businessName);
   }
