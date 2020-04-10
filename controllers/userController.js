@@ -77,24 +77,30 @@ router.get('/home', async (req, res, next) => {
   }
 })
 
-// router.get('/jobPost/:id', async (req, res, next) => {
+// Index for ALL job posts
+router.get('/allJobs', async (req, res, next) => {
+  try {
+    const allPosts = await Post.find({}).populate('user')
+    console.log(`\nthis is all job posts`, allPosts);
+    res.render('index/allJobs.ejs', {
+      post: allPosts
+    })
+  } 
+  catch(err) {
+    next(err)
+  }
+})
+
+
+// ALL JOBS INDEX
+// router.get('/allJobs', async (req, res, next) => {
 //   try {
-//     const currentUserId = req.session.userId
-//     const postTitle = req.body.title
-//     const showPost = await Post.find({user: currentUserId})
-//       // .populate('user')
-//       // .populate('comments.user')
-      
-//     console.log(`\nthis is show post`, showPost);
-//     res.render('post/show.ejs', { 
-//       post: showPost
-//       // userId: req.session.userId
-//     })
-//   } catch(err) {
+//     res.render('post/allJobs.ejs')
+//   }
+//   catch(err) {
 //     next(err)
 //   }
 // })
-
 
 
 module.exports = router

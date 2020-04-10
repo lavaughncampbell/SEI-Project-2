@@ -1,0 +1,23 @@
+<%- include('../partials/header.ejs') %>
+
+  <h2>ALL JOB POSTS</h2>
+
+  <ul>
+        <% post.forEach((post) => { %>
+          <li>
+            <a href="/post/jobPost/<%= post.id %>">
+
+            	<%= post.title %>
+            	<%= post.user.email %>
+            		
+
+            	</a>
+
+          </li>
+        
+        <% }) %>
+      </ul>
+
+<%- include('../partials/footer.ejs') %>
+
+<!-- NEED TO CHANGE ALL 'post' TO 'posts'  -->

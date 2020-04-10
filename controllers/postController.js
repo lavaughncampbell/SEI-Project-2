@@ -19,16 +19,6 @@ router.get('/jobPost', async (req, res, next) => {
 })
 
 
-// ALL JOBS INDEX
-router.get('/allJobs', async (req, res, next) => {
-  try {
-    res.render('post/allJobs.ejs')
-  }
-  catch(err) {
-    next(err)
-  }
-})
-
 // Post Create
 router.post('/jobPost', async (req, res, next) => {
 	try {
@@ -122,7 +112,6 @@ router.put('/jobPost/:id', async (req, res, next) => {
 router.delete('/jobPost/:id', async (req, res, next) => {
   try {
     await Post.findByIdAndRemove(req.params.id)
-
     res.redirect('/user/home')
   } catch(err) {
     next(err)
