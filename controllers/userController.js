@@ -62,22 +62,28 @@ router.get('/home', async (req, res, next) => {
 
     const currentUserId = req.session.userId
     const postTitle = req.body.title
-    const foundProfile = await Profile.find({ user: currentUserId })
+    const foundProfile = await Profile.findOne({ user: currentUserId })
     // const foundPost = await Post.find({ title: desiredTitle })
     // const currentUserId = req.session.userId
-    const foundPost = await Post.find({ user: currentUserId })
+    const foundPost = await Post.findOne({ user: currentUserId })
     // console.log(foundPost);
     // const foundBusinessName = req.body.businessName
     // console.log(`\nthis is rec.session.user`, req.session);
     console.log(`\nthis is found profile`, foundProfile);
     console.log(`\nthis is found post`, foundPost);
-    // if(user.areYouDeveloper === true) {
-    //   res.render('developer/')
-    // }
-    res.render('user/userHome.ejs', {
+    if(foundProfile.areYouDeveloper === true) {
+      console.log('\nthis user is a developer\n');
+      res.render('developer/devHome.ejs', {
+        profile: foundProfile,
+        post: foundPost
+      })
+    } else {
+      console.log('\nthis user is NOT a developer\n');
+      res.render('user/userHome.ejs', {
       profile: foundProfile,
       post: foundPost
     })
+    }
     // console.log(req.session.businessName);
   }
   catch(err) {
