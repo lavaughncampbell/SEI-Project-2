@@ -397,3 +397,43 @@ nav li ul li a:hover {
   justify-content: center;
   padding-left: 70px;
 }
+
+#dev-header {
+  display: flex;
+  justify-content: center;
+  color: #FF7D41;
+  margin: 0;
+  width: 25%;
+  position: relative;
+  top: 180px;
+  left: 150px;
+  font-size: 12px;
+  font-family: SF Pro Display;
+}
+
+#business-header {
+  display: flex;
+  justify-content: center;
+  color: #FF7D41;
+  margin: 0;
+  width: 25%;
+  position: relative;
+  top: 180px;
+  left: 150px;
+  font-size: 12px;
+  font-family: SF Pro Display;
+}
+
+#dev-message {
+  display: flex;
+  justify-content: center;
+  color: #FF7D41;
+  background-color: white;
+  margin: 0;
+  width: 25%;
+  position: relative;
+  top: 60px;
+  left: 150px;
+  font-size: 12px;
+  font-family: SF Pro Display;
+}
