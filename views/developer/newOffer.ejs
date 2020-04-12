@@ -1,0 +1,45 @@
+<%- include('../partials/header.ejs') %>
+
+<body onload="login()">
+
+    <div class="form-box">
+      <div class="chi-profile">
+        <h3>Make Offer</h3>
+      </div>
+      <form method="POST" action="/user/new" id="profile" class="input-group-new">
+        <input
+          type="text"
+          class="input-field"
+          name="contactName"
+          placeholder="Contact Name">
+        <input
+          type="text"
+          class="input-field"
+          name="businessName"
+          placeholder="Business Name">
+        <input
+          type="text"
+          class="input-field"
+          name="location"
+          placeholder="Location">
+          <input
+          type="text"
+          class="input-field"
+          name="industry"
+          placeholder="Industry">
+        <input
+          id="developer-style"
+          type="checkbox"
+          class="input-field"
+          name="areYouDeveloper">Are you a developer?
+        <input
+          type="text"
+          class="input-field"
+          name="languages"
+          placeholder="Languages">
+        <button
+        class="submit-btn-profile">Add Profile</button>
+      </form>
+    </div>
+
+<%- include('../partials/footer.ejs') %>

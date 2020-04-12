@@ -55,6 +55,9 @@ server.use('/user', userController)
 const postController = require('./controllers/postController')
 server.use('/post', postController)
 
+const offerController = require('./controllers/offerController')
+server.use('/offer', offerController)
+
 server.get('/', (req, res) => {
   res.render('home.ejs')
 })

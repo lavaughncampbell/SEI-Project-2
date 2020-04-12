@@ -35,6 +35,7 @@ NEEDS WORKS — INCOMPLETE
 
 // 1. // Need CRUD for the offers (developer)
 
+
 // 2. // VIEW ALL JOBS
 Developer can checkout all jobs index
 — Incomplete
