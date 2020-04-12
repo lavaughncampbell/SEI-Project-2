@@ -320,8 +320,15 @@ nav li ul li a:hover {
   overflow: hidden;
 }
 
+#budget {
+  color: #FF7D41;
+  background-color: lightgray;
+}
 
-
+#experience {
+  color: #FF7D41;
+  background-color: lightgray;
+}
 
 
 

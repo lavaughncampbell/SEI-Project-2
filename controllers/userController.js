@@ -37,16 +37,16 @@ router.post('/new', async (req, res, next) => {
 			languages: desiredLanguages,
       user: req.session.userId
 		})
-    // req.session.contactName = createdProfile.contactName
-    // req.session.businessName = createdProfile.businessName
-    // req.session.location = createdProfile.location
-    // req.session.industry = createdProfile.industry
-    // req.session.areYouDeveloper = createdProfile.areYouDeveloper
-    // req.session.languages = createdProfile.languages
-    // req.session.message = `${createdProfile.businessName}`
-    console.log(createdProfile);
-    req.session.message = `Hello, ${createdProfile.contactName} nice profile!`
-	  res.redirect('/user/home')
+
+    if(req.body.areYouDeveloper === "on") {
+      createdProfile.areYouDeveloper = true
+      res.render('developer/devHome.ejs')
+    } else {
+        createdProfile.areYouDeveloper = false
+        console.log(createdProfile);
+        req.session.message = `Hello, ${createdProfile.contactName} nice profile!`
+	      res.redirect('/user/home')
+      }
 }
 	catch(err) {
 		next(err)
@@ -85,7 +85,7 @@ router.get('/allJobs', async (req, res, next) => {
     res.render('index/allJobs.ejs', {
       post: allPosts
     })
-  } 
+  }
   catch(err) {
     next(err)
   }

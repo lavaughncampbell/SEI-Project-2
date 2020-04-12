@@ -6,7 +6,7 @@ const Post = require('../models/post')
 
 // <-------------------------------------> //
 
-// PROFILE ROUTE //
+
 
   // Post form
 router.get('/jobPost', async (req, res, next) => {

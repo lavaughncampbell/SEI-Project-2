@@ -12,14 +12,14 @@ const profileSchema = new mongoose.Schema({
     type: String // in placeholder -- "enter address"
   },
   industry: {
-    type: String,
+    type: String
   },
   posted: {
     type: Date,
     default: Date.now
   },
   areYouDeveloper: {
-    type: Boolean,
+    type: Boolean
   },
 // DEVELOPER MODEL
   languages: {
@@ -30,7 +30,7 @@ const profileSchema = new mongoose.Schema({
     ref: 'User',
     required: true // profiles must have a user
   }
-  
+
   // skills: [{
   //  languages: String,
   //  type: String,
