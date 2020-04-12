@@ -345,3 +345,56 @@ nav li ul li a:hover {
 .post-list a:hover {
   color: #4286f4;
 }
+
+#edit {
+  background-color: green;
+}
+
+
+.show-label {
+  font-family: SF Pro Display;
+  color: black;
+}
+
+
+
+.submit-btn-edit {
+  width: 10%;
+  padding: 10px 27px;
+  cursor: pointer;
+  display: block;
+  margin: 20px;
+  background: blue;
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+  text-align: center;
+  font-family: SF Pro Display;
+  font-size: 12px;
+}
+
+.submit-btn-edit a {
+  text-decoration: none;
+}
+
+.submit-btn-delete {
+  width: 10%;
+  padding: 10px 35px;
+  cursor: pointer;
+  display: block;
+  margin: 20px;
+  background: red;
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+  font-family: SF Pro Display;
+  font-size: 12px;
+  color: white;
+  text-align: left;
+}
+
+#line-buttons {
+  display: flex;
+  justify-content: center;
+  padding-left: 70px;
+}
