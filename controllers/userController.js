@@ -21,12 +21,23 @@ router.get('/profile', async (req, res, next) => {
 // Profile Create
 router.post('/new', async (req, res, next) => {
 	try {
+
+    const desiredAreYouDeveloper = {
+      areYouDeveloper: req.body.areYouDeveloper
+    }
+    if(req.body.areYouDeveloper === "on") {
+      desiredAreYouDeveloper.areYouDeveloper = true
+      res.send("Developer!!! YOU ARE ")
+      console.log("it worked!");
+    } else {
+        desiredAreYouDeveloper.areYouDeveloper = false
+      }
     // create a profile in the database
 		const desiredContactName = req.body.contactName
 		const desiredBusinessName = req.body.businessName
 		const desiredLocation = req.body.location
 		const desiredIndustry = req.body.industry
-		const desiredAreYouDeveloper = req.body.areYouDeveloper
+		// const desiredAreYouDeveloper = req.body.areYouDeveloper
 		const desiredLanguages = req.body.languages
 		const createdProfile = await Profile.create({
 			contactName: desiredContactName,
@@ -38,15 +49,9 @@ router.post('/new', async (req, res, next) => {
       user: req.session.userId
 		})
 
-    if(req.body.areYouDeveloper === "on") {
-      createdProfile.areYouDeveloper = true
-      res.render('developer/devHome.ejs')
-    } else {
-        createdProfile.areYouDeveloper = false
-        console.log(createdProfile);
-        req.session.message = `Hello, ${createdProfile.contactName} nice profile!`
-	      res.redirect('/user/home')
-      }
+    console.log(createdProfile);
+    req.session.message = `Hello, ${createdProfile.contactName} nice profile!`
+    res.redirect('/user/home')
 }
 	catch(err) {
 		next(err)

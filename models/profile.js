@@ -19,7 +19,8 @@ const profileSchema = new mongoose.Schema({
     default: Date.now
   },
   areYouDeveloper: {
-    type: Boolean
+    type: Boolean,
+    default: false
   },
 // DEVELOPER MODEL
   languages: {
