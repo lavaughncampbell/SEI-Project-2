@@ -59,6 +59,7 @@ router.post('/new', async (req, res, next) => {
 
 router.get('/home', async (req, res, next) => {
   try {
+
     const currentUserId = req.session.userId
     const postTitle = req.body.title
     const foundProfile = await Profile.find({ user: currentUserId })
@@ -70,6 +71,9 @@ router.get('/home', async (req, res, next) => {
     // console.log(`\nthis is rec.session.user`, req.session);
     console.log(`\nthis is found profile`, foundProfile);
     console.log(`\nthis is found post`, foundPost);
+    // if(user.areYouDeveloper === true) {
+    //   res.render('developer/')
+    // }
     res.render('user/userHome.ejs', {
       profile: foundProfile,
       post: foundPost
