@@ -52,19 +52,30 @@ router.get('/jobPost/:id', async (req, res, next) => {
   try {
   	const currentUserId = req.session.userId
     // const postTitle = req.body.title
+    const foundProfile = await Profile.find({ user: currentUserId })
     const showPost = await Post.findById(req.params.id)
       // .populate('user')
       // .populate('comments.user')
     console.log(`\nthis is show post`, showPost);
-    res.render('post/show.ejs', {
-      post: showPost,
-      indexOfPostToDelete: req.params.id
+    if(foundProfile[0].areYouDeveloper === true) {
+      console.log(`\nworked, this is dev show page for offers\n`, showPost);
+      res.render('developer/showForOffers.ejs', {
+        profile: foundProfile[0],
+        post: showPost
+      })
+    } else {
+      console.log(`\ndidn't work for developer show page for offers`, showPost);
+      res.render('post/show.ejs', {
+        post: showPost,
+        indexOfPostToDelete: req.params.id
+      })
       // userId: req.session.userId
-    })
+    }
   } catch(err) {
     next(err)
   }
 })
+
 
 // EDIT PAGE
 router.get('/jobPost/:id/edit', async (req, res, next) => {
