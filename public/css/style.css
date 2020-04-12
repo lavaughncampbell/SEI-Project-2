@@ -34,14 +34,14 @@ html {
 }
 
 a {
-  color: black;
+  color: white;
 }
 
 /* PUT THESE BACK LATER*/
 
 
 a:hover {
-  color: blue;
+  color: #FF7D41;
 }
 
 #local {
@@ -330,5 +330,18 @@ nav li ul li a:hover {
   background-color: lightgray;
 }
 
+#entry-style {
+  font-family: SF Pro Display;
+}
 
+.post-list {
+  font-family: SF Pro Display;
+}
 
+.post-list a {
+  color: black;
+}
+
+.post-list a:hover {
+  color: #4286f4;
+}
