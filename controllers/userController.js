@@ -22,15 +22,14 @@ router.get('/profile', async (req, res, next) => {
 router.post('/new', async (req, res, next) => {
 	try {
 
-    const desiredAreYouDeveloper = {
-      areYouDeveloper: req.body.areYouDeveloper
-    }
+    let desiredAreYouDeveloper = req.body.areYouDeveloper
+
     if(req.body.areYouDeveloper === "on") {
-      desiredAreYouDeveloper.areYouDeveloper = true
-      res.send("Developer!!! YOU ARE ")
-      console.log("it worked!");
+      desiredAreYouDeveloper = true
+      console.log(desiredAreYouDeveloper, "this should be true");
     } else {
-        desiredAreYouDeveloper.areYouDeveloper = false
+        desiredAreYouDeveloper = false
+        console.log(desiredAreYouDeveloper, "this should be false");
       }
     // create a profile in the database
 		const desiredContactName = req.body.contactName

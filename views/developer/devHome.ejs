@@ -1,21 +1,14 @@
 <%- include('../partials/header.ejs') %>
 
   <div>
-    <a href="/post/jobPost"><button id="postJobButton">Make a Offer</button></a>
+    <a href="/post/jobPost"><button id="postJobButton">Make an Offer</button></a>
   </div>
     <div class="user-form-box">
       <p><%= message %></p>
 
       <h2>My Offers</h2>
 
-      <ul>
-        <% post.forEach((post) => { %>
-          <li>
-            <a href="/post/jobPost/<%= post.id %>"><%= post.title %></a>
-          </li>
 
-        <% }) %>
-      </ul>
 
     </div>
     <div class="second-form-box">
