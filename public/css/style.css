@@ -97,7 +97,7 @@ a:hover {
   margin: 6% auto;
   background: white;
   padding: 5px;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .button-box {
@@ -167,7 +167,6 @@ a:hover {
 }
 
 
-
 /*USER HOME PAGE */
 .user-form-box {
   width: 380px;
@@ -176,7 +175,7 @@ a:hover {
   margin: 30px;
   background: white;
   padding: 5px;
-  overflow: hidden;
+  overflow: scroll;
   left: 100px;
   top: 180px;
 }
@@ -189,9 +188,8 @@ a:hover {
   background: white;
   padding: 5px;
   overflow: hidden;
-  left: 100px;
-  top: 180px;
-
+  left: 800px;
+  top: -10px;
 }
 
 h2 {
@@ -428,12 +426,11 @@ nav li ul li a:hover {
   display: flex;
   justify-content: center;
   color: #FF7D41;
-  background-color: white;
   margin: 0;
   width: 25%;
   position: relative;
   top: 60px;
   left: 150px;
-  font-size: 12px;
+  font-size: 18px;
   font-family: SF Pro Display;
 }

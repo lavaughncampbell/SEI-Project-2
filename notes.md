@@ -25,21 +25,21 @@ Show Job Page — Incomplete (show ROUTE)  -- working, but needs more style
 Delete Job Post Page — Incomplete (delete ROUTE)
 All Jobs From Every User Index — (Index ROUTE) -- done
 Developer Checkbox Register — done
-
-NEEDS WORKS — INCOMPLETE
-
 // 1. // DEVELOPER LOGIN
 Developer Checkbox Register — Incomplete
 - if you click on developer checkbox
 - the logic will switch like you are a developer not a business
-- how that will look is the user home page will see my job or my offers. The how it work on the user home page will be updated for a developer instructions. The button
-will switch to make offer. it will have the offer form which we will need to use the offer model for. When you make a offer it will go under my offer, and same like a business a developer can show, edit, update, and delete their offer.
+- how that will look is the user home page will see my job or my offers. The how it work on the user home page will be updated for a developer instructions. The button will switch to make offer. it will have the offer form which we will need to use the offer model for. When you make a offer it will go under my offer, and same like a business a developer can show, edit, update, and delete their offer.
 
+NEEDS WORKS — INCOMPLETE
+
+// 1. // Need CRUD for the offers (developer)
 
 // 2. // VIEW ALL JOBS
 Developer can checkout all jobs index
 — Incomplete
 - Developer can basically view the index page.
+- (possibly just DONT SHOW IN PRESENTATION -- when not logged in, can see all jobs from sub-nav)
 
 
 // 3. // CREATE OFFER
@@ -74,6 +74,8 @@ you shouldn't be able to edit/delete a post (or anything) unless its yours (res.
 -- maybe ask TA why the fonts arent showing on my browser
 
 *******  when you log in, it brings up the logout -- we dont want to see login in the nav when yhou're logged in ********
+
+// does the user need to be able to edit their PROFILE? // (would be edit button on the userHome page in teh profile box)
 
 
 
