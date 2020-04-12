@@ -76,6 +76,11 @@ you shouldn't be able to edit/delete a post (or anything) unless its yours (res.
 
 *******  when you log in, it brings up the logout -- we dont want to see login in the nav when yhou're logged in ********
 
+*** from allJobs page, when clicking into a (individual job) job page, the user shouldn't be able to make edits or delete a job post.  ONLY WANT DEVELOPERS TO SEE A button that says "make offer" on that page. ***
+-- want this to be speicif to the dev whos viewin the show page IN ORDER TO MAKE ABN OFFER
+
+
+
 // does the user need to be able to edit their PROFILE? // (would be edit button on the userHome page in teh profile box)
 
 

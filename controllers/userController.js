@@ -59,7 +59,6 @@ router.post('/new', async (req, res, next) => {
 
 router.get('/home', async (req, res, next) => {
   try {
-
     const currentUserId = req.session.userId
     const postTitle = req.body.title
     const foundProfile = await Profile.find({ user: currentUserId })
@@ -94,11 +93,22 @@ router.get('/home', async (req, res, next) => {
 // Index for ALL job posts
 router.get('/allJobs', async (req, res, next) => {
   try {
+    const currentUserId = req.session.userId
+    const foundProfile = await Profile.find({ user: currentUserId })
     const allPosts = await Post.find({}).populate('user')
     console.log(`\nthis is all job posts`, allPosts);
-    res.render('index/allJobs.ejs', {
+    if(foundProfile[0].areYouDeveloper === true) {
+      console.log('\nworked, this is dev show page for offers\n');
+      res.render('developer/showForOffers.ejs', {
+        profile: foundProfile[0],
+        post: allPosts
+      })
+    } else {
+      console.log(`\ndidn't work still developer index page`);
+      res.render('index/allJobs.ejs', {
       post: allPosts
-    })
+     })
+    }
   }
   catch(err) {
     next(err)

@@ -1,0 +1,33 @@
+<%- include('../partials/header.ejs') %>
+<h2>"hello"</h2>
+
+<div class="form-box">
+  <div class="chi-profile">
+    <h3> <%= profile.businessName %></h3>
+  </div>
+
+  <form method="POST" action="/post/jobPost" id="job-post" class="input-group-new">
+
+  <div class="show-page">
+
+      <h2><%= post.title %></h2>
+
+      <h2><%= post.experience %></h2>
+  
+      <h2><%= post.budget %></h2>
+  
+      <h2><%= post.description %></h2>
+
+
+ <div id="line-buttons">
+    <div class="submit-btn-edit" id="edit"><a href="/post/jobPost/<%= post.id %>/edit">Edit</a>
+    </div>
+
+    <form method="POST" action="/post/jobPost/<%= post.id %>?_method=DELETE"><button class="submit-btn-delete">Delete</button>
+  </div>
+  </form>
+</div>
+
+
+
+<%- include('../partials/footer.ejs') %>
