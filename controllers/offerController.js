@@ -44,6 +44,17 @@ router.post('/newOffer', async (req, res, next) => {
 })
 
 
+// router.delete('/jobPost/:id', async (req, res, next) => {
+//   try {
+//     await Post.findByIdAndRemove(req.params.id)
+//     res.redirect('/user/home')
+//   } catch(err) {
+//     next(err)
+//   }
+
+// })
+
+
 // router.post('/newOffer', async (req, res, next) => {
 // 	try {
 // 		const madeOfferTitle = 

@@ -3,6 +3,7 @@ const router = express.Router()
 const User = require('../models/user')
 const Profile = require('../models/profile')
 const Post = require('../models/post')
+// maybe require offer model
 
 // <-------------------------------------> //
 
