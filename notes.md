@@ -85,8 +85,6 @@ you shouldn't be able to edit/delete a post (or anything) unless its yours (res.
 
 // are you a developer button on profile page needs styling
 
-// should mention in our presentation something like, "we wanted the profile input page to be the redirect from a successful registration, so the user is "forced" to put in more info about themselves (and so we can get the areYouDeveloper question answered immediately after the user registers) (and without having too many boxes to fill when registering -- just want email and password)
-
 
 /// PRESENTATION NOTES ///
 -- show to others

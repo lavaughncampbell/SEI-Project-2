@@ -4,21 +4,19 @@
     <a href="/offer/newOffer"><button id="postJobButton">Make an Offer</button></a>
   </div>
     <div id="dev-header"><h1><%= profile.contactName %></h1></div>
-    <div id="dev-message"><p><%= message %></p></div>
+    <div id="dev-message"><p><%= message %></p> per <%= profile.businessName %>'s Approval</div>
     <div class="user-form-box">
 
       <h2>My Offers</h2>
+
         <ul class="offer-list">
-          <% offer.forEach((offer) => { %>
+          <% offers.forEach((offer) => { %>
             <li>
-              <%= offer.name %>
+              <%= offer.post.title %>
             </li>
 
           <% }) %>
         </ul>
-
-
-
 
     </div>
     <div class="user-form-box">

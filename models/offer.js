@@ -2,19 +2,19 @@ const mongoose = require('mongoose')
 const offerSchema = new mongoose.Schema({
 	name: {
 		type: String,
-		required: true
+		// required: true
 	},
 	experience: {
 		type: String,
-		required: true
+		// required: true
 	},
 	amount: {
 		type: Number,
-		required: true
+		// required: true
 	},
 	description: {
 		type: String,
-		required: true
+		// required: true
 	},
 	comments: {
 		type: String,
@@ -31,7 +31,7 @@ const offerSchema = new mongoose.Schema({
 	developer: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'Developer',
-		required: true
+		// required: true
 	}
 })
 const Offer = mongoose.model('Offer', offerSchema)

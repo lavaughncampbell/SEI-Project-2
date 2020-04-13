@@ -16,9 +16,9 @@ const postSchema = new mongoose.Schema({
 		type: String,
 	},
 	user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    // required: true // profiles must have a user
+    	type: mongoose.Schema.Types.ObjectId,
+    	ref: 'User',
+    	required: true // profiles must have a user
 	}
 	// need to get that back to required
 

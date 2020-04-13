@@ -39,6 +39,7 @@ router.post('/new', async (req, res, next) => {
 		const desiredIndustry = req.body.industry
 		// const desiredAreYouDeveloper = req.body.areYouDeveloper
 		const desiredLanguages = req.body.languages
+    console.log(`\nheres userID`, req.session.userId);
 		const createdProfile = await Profile.create({
 			contactName: desiredContactName,
 			businessName: desiredBusinessName,
@@ -62,22 +63,25 @@ router.get('/home', async (req, res, next) => {
   try {
     const currentUserId = req.session.userId
     const postTitle = req.body.title
+    const currentPostId = req.session.postId
     const foundProfile = await Profile.find({ user: currentUserId })
     // const foundPost = await Post.find({ title: desiredTitle })
     // const currentUserId = req.session.userId
     const foundPost = await Post.find({ user: currentUserId })
-    const foundOffer = await Offer.find({ user: currentUserId })
+    const foundOffers = await Offer.find({}).populate('post')
     // console.log(foundPost);
     // const foundBusinessName = req.body.businessName
     // console.log(`\nthis is rec.session.user`, req.session);
     console.log(`\nthis is found profile`, foundProfile);
     console.log(`\nthis is found post`, foundPost);
+    
     if(foundProfile[0].areYouDeveloper === true) {
       console.log('\nthis user is a developer\n');
+      console.log('\nthis is a foundOffer', foundOffers);
       res.render('developer/devHome.ejs', {
         profile: foundProfile[0],
         post: foundPost,
-        offer: foundOffer
+        offers: foundOffers
       })
     } else {
       console.log('\nthis user is NOT a developer\n');

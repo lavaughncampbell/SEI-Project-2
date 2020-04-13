@@ -6,9 +6,12 @@
     <h3> <%= profile.businessName %></h3>
   </div>
 
-  <h3>made it to the right page</h3>
+  <h3>Offer Show Page</h3>
 
   <form method="POST" action="/offer/newOffer" id="job-post" class="input-group-new">
+
+  <input id="postId" name="postId" type="hidden" value="<%= post.id %>">
+  <input id="postTitle" name="postTitle" type="hidden" value="<%= post.title %>">
 
   <div class="show-page">
 
@@ -34,11 +37,12 @@
   </div>
 
  <div id="line-buttons">
-  <a href="/offer/newOffer"><button>Make Offer</button></a>
+  <button>Make Offer</button>
   </div>
 
   </form>
 </div>
+
 
 
 

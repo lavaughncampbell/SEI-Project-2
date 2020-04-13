@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const Offer = require('../models/offer')
 const User = require('../models/user')
 const Profile = require('../models/profile')
 const Post = require('../models/post')
@@ -21,14 +22,19 @@ router.get('/newOffer', async (req, res, next) => {
 // click this to make offer and go to userHome (and see "made offer flash or red button")
 router.post('/newOffer', async (req, res, next) => {
 	try {
+		const postId = req.body.postId
+		const postTitle = req.body.title
 		// console.log("made offer button");
 		const developerName = req.session.userId
-		const offerMade = await Post.create({
+		const offerMade = await Offer.create({
 			name: developerName,
-			user: req.session.usedId
+			user: req.session.usedId,
+			title: postTitle,
+			post: postId
 		})
 		console.log(`\nthis is offerMade`, offerMade);
-		// console.log(`\nthis is name`, name);
+		console.log(`\nthis is postId`, postId);
+		console.log(`\nthis is developerName`, developerName);
 		req.session.message = `You made an offer!`
 		res.redirect('/user/home')
 	} 

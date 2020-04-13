@@ -315,7 +315,7 @@ nav li ul li a:hover {
   margin: 6% auto;
   background: red;
   padding: 5px;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 #budget {
@@ -435,11 +435,11 @@ nav li ul li a:hover {
   font-family: SF Pro Display;
 }
 
-.profile-home {
+/*.profile-home {
   font-family: SF Pro Display;
   font-size: 12px;
 }
 
 #profile-header {
   color: #FF7D41;
-}
+}*/
