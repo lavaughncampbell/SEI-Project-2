@@ -38,7 +38,7 @@ router.post('/jobPost', async (req, res, next) => {
 		req.session.experience = postToCreate.experience
 		req.session.budget = postToCreate.budget
 		req.session.description = postToCreate.description
-		console.log(postToCreate);
+		// console.log(postToCreate);
 		req.session.message = `${postToCreate.title} successfully added post`
 		res.redirect('/user/home')
 	}
@@ -56,15 +56,15 @@ router.get('/jobPost/:id', async (req, res, next) => {
     const showPost = await Post.findById(req.params.id)
       // .populate('user')
       // .populate('comments.user')
-    console.log(`\nthis is show post`, showPost);
+    // console.log(`\nthis is show post`, showPost);
     if(foundProfile[0].areYouDeveloper === true) {
-      console.log(`\nworked, this is dev show page for offers\n`, showPost);
+      // console.log(`\nworked, this is dev show page for offers\n`, showPost);
       res.render('developer/showForOffers.ejs', {
         profile: foundProfile[0],
         post: showPost
       })
     } else {
-      console.log(`\ndidn't work for developer show page for offers`, showPost);
+      // console.log(`\ndidn't work for developer show page for offers`, showPost);
       res.render('post/show.ejs', {
         post: showPost,
         indexOfPostToDelete: req.params.id
@@ -108,7 +108,7 @@ router.put('/jobPost/:id', async (req, res, next) => {
         description: req.body.description
       })
       // {new: true }
-    console.log(postToUpdate);
+    // console.log(postToUpdate);
   	res.redirect('/user/home')
     // const foundJobPost = await Post.findById(req.params.id)
     // const foundJobs = await User.findById({})

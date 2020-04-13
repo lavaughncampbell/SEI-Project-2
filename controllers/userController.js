@@ -94,7 +94,7 @@ router.get('/home', async (req, res, next) => {
 router.get('/allJobs', async (req, res, next) => {
   try {
     const allPosts = await Post.find({}).populate('user')
-    console.log(`\nthis is all job posts`, allPosts);
+    // console.log(`\nthis is all job posts`, allPosts);
     res.render('index/allJobs.ejs', {
       post: allPosts
     })
