@@ -21,16 +21,16 @@ router.get('/newOffer', async (req, res, next) => {
 // click this to make offer and go to userHome (and see "made offer flash or red button")
 router.post('/newOffer', async (req, res, next) => {
 	try {
-		console.log("made offer button");
-		res.send('working this offerMade button')
-
-		// const developerName = req.session.userId
-		// const offerMade = await Post.create({
-		// 	name: developerName
-		// })
-		// console.log(`\nthis is offerMade`, offerMade);
-		// req.session.message = `You made an offer!`
-		// res.redirect('/developer/devHome')
+		// console.log("made offer button");
+		const developerName = req.session.userId
+		const offerMade = await Post.create({
+			name: developerName,
+			user: req.session.usedId
+		})
+		console.log(`\nthis is offerMade`, offerMade);
+		// console.log(`\nthis is name`, name);
+		req.session.message = `You made an offer!`
+		res.redirect('/user/home')
 	} 
 	catch(err) {
 		next(err)

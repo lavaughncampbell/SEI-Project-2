@@ -31,7 +31,7 @@ router.post('/jobPost', async (req, res, next) => {
 			experience: postExperience,
 			budget: postBudget,
 			description: postDescription,
-     		user: req.session.userId
+     	user: req.session.userId
 			// need to put usedId to attach to user
 		})
 		req.session.title = postToCreate.title
