@@ -8,6 +8,16 @@
     <div class="user-form-box">
 
       <h2>My Offers</h2>
+        <ul class="offer-list">
+          <% offer.forEach((offer) => { %>
+            <li>
+              <%= offer.name %>
+            </li>
+
+          <% }) %>
+        </ul>
+
+
 
 
     </div>
@@ -21,9 +31,6 @@
       </ol>
     </div>
 <div>
-
-
-
 
 
 <%- include('../partials/footer.ejs') %>

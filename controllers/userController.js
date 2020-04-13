@@ -3,6 +3,7 @@ const router = express.Router()
 const User = require('../models/user')
 const Profile = require('../models/profile')
 const Post = require('../models/post')
+const Offer = require('../models/offer')
 
 // <-------------------------------------> //
 
@@ -65,6 +66,7 @@ router.get('/home', async (req, res, next) => {
     // const foundPost = await Post.find({ title: desiredTitle })
     // const currentUserId = req.session.userId
     const foundPost = await Post.find({ user: currentUserId })
+    const foundOffer = await Offer.find({ user: currentUserId })
     // console.log(foundPost);
     // const foundBusinessName = req.body.businessName
     // console.log(`\nthis is rec.session.user`, req.session);
@@ -74,7 +76,8 @@ router.get('/home', async (req, res, next) => {
       console.log('\nthis user is a developer\n');
       res.render('developer/devHome.ejs', {
         profile: foundProfile[0],
-        post: foundPost
+        post: foundPost,
+        offer: foundOffer
       })
     } else {
       console.log('\nthis user is NOT a developer\n');
