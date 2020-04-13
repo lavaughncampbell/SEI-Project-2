@@ -1,29 +1,30 @@
 <%- include('../partials/header.ejs') %>
 
-    <div class="form-box">
-      <div class="job-post">
-        <h3>All Jobs</h3>
-      </div>
+  <div class="form-box">
+    <div class="job-post">
+      <h3>All Jobs</h3>
+    </div>
 
 
   <ul>
-        <% post.forEach((post) => { %>
-          <li>
-            <a href="/post/jobPost/<%= post.id %>">
-            <div id="all-jobs">
-            	<%= post.user.email %>
-            	<%= post.title %>
-            	</a>
-            	<%= post.experience %>
-            	<%= post.budget %>
-            	<%= post.description %>            	
-            </div>
+    <% post.forEach((post) => { %>
+      <li>
+        <a href="/post/jobPost/<%= post.id %>">
+        <div id="all-jobs">
+          <%= post.user.email %>
+          <%= post.title %>
+        </a>
+          <%= post.experience %>
+          <%= post.budget %>
+          <%= post.description %>
+        </div>
+        </div>
 
           </li>
           <button>Make Offer</button>
           <!-- style the button -->
           <!-- possibly need to style the form box (alignment etc) -->
-        
+
         <% }) %>
       </ul>
 

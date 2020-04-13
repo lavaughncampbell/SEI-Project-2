@@ -177,7 +177,7 @@ a:hover {
   padding: 5px;
   overflow: scroll;
   left: 100px;
-  top: 180px;
+  top: 140px;
 }
 
 .second-form-box {
@@ -189,7 +189,7 @@ a:hover {
   padding: 5px;
   overflow: hidden;
   left: 800px;
-  top: -10px;
+  top: -45px;
 }
 
 h2 {
@@ -213,7 +213,7 @@ h2 {
   border: none;
   position: absolute;
   right: 300px;
-  top: 135px;
+  top: 205px;
 }
 
 .chi-profile {
@@ -433,4 +433,13 @@ nav li ul li a:hover {
   left: 150px;
   font-size: 18px;
   font-family: SF Pro Display;
+}
+
+.profile-home {
+  font-family: SF Pro Display;
+  font-size: 12px;
+}
+
+#profile-header {
+  color: #FF7D41;
 }

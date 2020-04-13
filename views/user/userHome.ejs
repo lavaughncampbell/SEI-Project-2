@@ -21,12 +21,19 @@
     </div>
       <div class="user-form-box">
       <form method="get" action="/user/new" id="profile" class="user-chi-profile">
-          <h3>User's Profile</h3>
+        <div class="profile-home">
+          <h3 id="profile-header">User's Profile</h3>
+          <label>Contact Name:</label>
           <p><%= profile.contactName %></p>
+          <label>Business Name:</label>
           <p><%= profile.businessName %></p>
+          <label>Location:</label>
           <p><%= profile.location %></p>
+          <label>Industry:</label>
           <p><%= profile.industry %></p>
+          <label>Languages</label>
           <p><%= profile.languages %></p>
+        </div>
         </form>
       </div>
 

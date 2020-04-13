@@ -88,6 +88,16 @@ you shouldn't be able to edit/delete a post (or anything) unless its yours (res.
 // should mention in our presentation something like, "we wanted the profile input page to be the redirect from a successful registration, so the user is "forced" to put in more info about themselves (and so we can get the areYouDeveloper question answered immediately after the user registers) (and without having too many boxes to fill when registering -- just want email and password)
 
 
+/// PRESENTATION NOTES ///
+-- show to others
+-- wear something nice
+-- what to talk about
+-- tour of the site
+-- something proud of
+-- something that was really tough
+-- "wanted the profile input page to be a part of registration without it being the register page" (big reason is that we needed to find out if the user is a developer or not, because the site functions one way for businesses looking for coders, and another way for developers to make offers on jobs)
+  -- we were able to keep the registration page super simple, with just email and password
+
 
 
 ——————  MVP of ChiQuery ————————
