@@ -8,27 +8,37 @@
 
   <h3>made it to the right page</h3>
 
-<!--   <form method="POST" action="/post/jobPost" id="job-post" class="input-group-new">
+  <form method="POST" action="/post/jobPost" id="job-post" class="input-group-new">
 
   <div class="show-page">
 
+    <label class="show-label">Job:</label>
+    <div>
       <h2><%= post.title %></h2>
-
-      <h2><%= post.experience %></h2>
-  
-      <h2><%= post.budget %></h2>
-  
-      <h2><%= post.description %></h2>
-
-
- <div id="line-buttons">
-    <div class="submit-btn-edit" id="edit"><a href="/post/jobPost/<%= post.id %>/edit">Edit</a>
     </div>
 
-    <form method="POST" action="/post/jobPost/<%= post.id %>?_method=DELETE"><button class="submit-btn-delete">Delete</button>
+    <label class="show-label">Experience:</label>
+    <div>
+      <h2><%= post.experience %></h2>
+    </div>
+
+    <label class="show-label">Budget:</label>
+    <div>
+      <h2><%= post.budget %></h2>
+    </div>
+
+    <label class="show-label">Description:</label>
+    <div>
+      <h2><%= post.description %></h2>
+    </div>
   </div>
+
+ <div id="line-buttons">
+  <button>Make Offer</button>
+  </div>
+
   </form>
-</div> -->
+</div>
 
 
 
