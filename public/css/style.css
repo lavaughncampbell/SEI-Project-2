@@ -435,6 +435,18 @@ nav li ul li a:hover {
   font-family: SF Pro Display;
 }
 
+.offer-post a {
+  display: block;
+  visibility: visible;
+  color: black;
+}
+
+.offer-post a:hover {
+  visibility: visible;
+  display: block;
+  color: blue;
+}
+
 /*.profile-home {
   font-family: SF Pro Display;
   font-size: 12px;
