@@ -15,9 +15,9 @@
           <% offers.forEach((offer) => { %>
             <li>
               <a href="/post/jobPost/<%= offer.post.id %>"><%= offer.post.title %></a>
-                <form method="POST" action="/post/jobPost/<%= offer.post.id %>?_method=DELETE"><button>Delete</button>
-                </form>
             </li>
+                <form method="POST" action="/post/jobPost/<%= post.id %>?_method=DELETE"><button>Delete</button>
+                </form>
 
           <% }) %>
 

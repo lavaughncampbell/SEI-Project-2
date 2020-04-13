@@ -67,14 +67,30 @@ router.get('/home', async (req, res, next) => {
     const foundProfile = await Profile.find({ user: currentUserId })
     // const foundPost = await Post.find({ title: desiredTitle })
     // const currentUserId = req.session.userId
-    const foundPost = await Post.find({ user: currentUserId })
+    const foundPost = await Post.find({ user: currentUserId }).populate('offer')
+    // .populate('user').populate('offer.user')
     const foundOffers = await Offer.find({}).populate('post')
-    // console.log(foundPost);
-    // const foundBusinessName = req.body.businessName
-    // console.log(`\nthis is rec.session.user`, req.session);
+    // for loop that iterates over a array of posts
+    // if posts have offer
+
+    const offerArr = []
+
+    nested for loops with a push to a array that creates offers.
+     for(let i = 0; i < foundPost.length; i++) {
+      console.log(foundPost);
+      for(let i = 0; i < foundOffers.length; i++ ) {
+        post.push(foundOffers[i])
+      }
+     }
+
+     // push to array of offers
+     // empty array for push offers
+     // possible redirect
+
+
     console.log(`\nthis is found profile`, foundProfile);
     console.log(`\nthis is found post`, foundPost);
-    
+
     if(foundProfile[0].areYouDeveloper === true) {
       console.log('\nthis user is a developer\n');
       console.log('\nthis is a foundOffer', foundOffers);
@@ -85,9 +101,11 @@ router.get('/home', async (req, res, next) => {
       })
     } else {
       console.log('\nthis user is NOT a developer\n');
+      console.log('\n HEY! this is the post with offers', foundPost);
       res.render('user/userHome.ejs', {
-      profile: foundProfile[0],
-      post: foundPost
+        profile: foundProfile[0],
+        post: foundPost,
+        offers: foundOffers
     })
     }
     // console.log(req.session.businessName);

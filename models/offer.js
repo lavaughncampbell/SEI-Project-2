@@ -1,9 +1,5 @@
 const mongoose = require('mongoose')
 const offerSchema = new mongoose.Schema({
-	name: {
-		type: String,
-		// required: true
-	},
 	experience: {
 		type: String,
 		// required: true
@@ -28,9 +24,10 @@ const offerSchema = new mongoose.Schema({
 		ref: 'Post',
 		required: true
 	},
-	developer: {
+	user: {
 		type: mongoose.Schema.Types.ObjectId,
-		ref: 'Developer',
+		ref: 'User',
+		required: true
 		// required: true
 	}
 })

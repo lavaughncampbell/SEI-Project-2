@@ -13,6 +13,7 @@
         <% post.forEach((post) => { %>
           <li>
             <a href="/post/jobPost/<%= post.id %>"><%= post.title %></a>
+            <h2><%= post.offers.id %></h2>
           </li>
 
         <% }) %>

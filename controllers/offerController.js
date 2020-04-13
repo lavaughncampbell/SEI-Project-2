@@ -27,17 +27,15 @@ router.post('/newOffer', async (req, res, next) => {
 		// console.log("made offer button");
 		const developerName = req.session.userId
 		const offerMade = await Offer.create({
-			name: developerName,
-			user: req.session.usedId,
+			user: req.session.userId,
 			title: postTitle,
 			post: postId
 		})
 		console.log(`\nthis is offerMade`, offerMade);
 		console.log(`\nthis is postId`, postId);
-		console.log(`\nthis is developerName`, developerName);
-		req.session.message = `You made an offer!`
+		req.session.message = `You made an offer! Pending Approval`
 		res.redirect('/user/home')
-	} 
+	}
 	catch(err) {
 		next(err)
 	}
@@ -57,8 +55,8 @@ router.post('/newOffer', async (req, res, next) => {
 
 // router.post('/newOffer', async (req, res, next) => {
 // 	try {
-// 		const madeOfferTitle = 
-// 	} 
+// 		const madeOfferTitle =
+// 	}
 // 	catch(err) {
 // 		next(err)
 // 	}
@@ -66,13 +64,13 @@ router.post('/newOffer', async (req, res, next) => {
 
 
 
-//redirect to userhome page once the 
-//foreach loop runs through the offers in the 
+//redirect to userhome page once the
+//foreach loop runs through the offers in the
 //dev hom page
 
 
 
-// click button that links to route, 
+// click button that links to route,
 //route is how you render form
 
 // form creates new information with post method
