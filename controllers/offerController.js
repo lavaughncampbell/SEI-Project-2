@@ -19,7 +19,7 @@ router.get('/newOffer', async (req, res, next) => {
 
 
 // click this to make offer and go to userHome (and see "made offer flash or red button")
-router.post('/madeOffer', async (req, res, next) => {
+router.post('/newOffer', async (req, res, next) => {
 	try {
 		console.log("made offer button");
 		res.send('working this offerMade button')
