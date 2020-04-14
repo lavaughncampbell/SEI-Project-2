@@ -1,50 +1,71 @@
 <%- include('../partials/header.ejs') %>
 
-  <div>
-    <a href="/offer/newOffer"><button id="postJobButton">Make an Offer</button></a>
+<div>
+  <a href="/offer/newOffer"><button id="postJobButton">Make an Offer</button></a>
+</div>
+<div id="dev-header">
+  <h1><%= profile.contactName %></h1>
+</div>
+
+<div id="dev-message">
+  <p><%= message %></p>
+</div>
+
+<div class="user-form-box">
+  <h2>My Offers</h2>
+<div class="offer-post">
+  <ul class="offer-list">
+    <% offers.forEach((offer) => { %>
+      <li>
+        <a href="/post/jobPost/<%= offer.post.id %>"><%= offer.post.title %></a>
+      </li>
+      <form method="POST" action="/post/jobPost/<%= post.id %>?_method=DELETE"><button>Delete</button>
+      </form>
+
+    <% }) %>
+
+  </ul>
+</div>
+
+</div>
+
+<div class="user-form-box">
+  <form method="get" action="/user/new" id="profile" class="user-chi-profile">
+  <div class="profile-home">
+    <h3 id="profile-header">User's Profile</h3>
+    <strong>
+      <label>Contact Name:</label>
+    </strong>
+      <p><%= profile.contactName %></p>
+    <strong>
+      <label>Business Name:</label>
+    </strong>
+      <p><%= profile.businessName %></p>
+    <strong>
+      <label>Location:</label>
+    </strong>
+      <p><%= profile.location %></p>
+    <strong>
+      <label>Industry:</label>
+    </strong>
+      <p><%= profile.industry %></p>
+    <strong>
+      <label>Languages:</label>
+    </strong>
+      <p><%= profile.languages %></p>
   </div>
-    <div id="dev-header"><h1><%= profile.contactName %></h1></div>
+  </form>
+</div>
 
-    <div id="dev-message"><p><%= message %></p></div>
-
-    <div class="user-form-box">
-
-      <h2>My Offers</h2>
-    <div class="offer-post">
-        <ul class="offer-list">
-          <% offers.forEach((offer) => { %>
-            <li>
-              <a href="/post/jobPost/<%= offer.post.id %>"><%= offer.post.title %></a>
-            </li>
-                <form method="POST" action="/post/jobPost/<%= post.id %>?_method=DELETE"><button>Delete</button>
-                </form>
-
-          <% }) %>
-
-        </ul>
-    </div>
-
-    </div>
-    <div class="user-form-box">
-      <form method="get" action="/user/new" id="profile" class="user-chi-profile">
-          <h3>User's Profile</h3>
-          <p><%= profile.contactName %></p>
-          <p><%= profile.businessName %></p>
-          <p><%= profile.location %></p>
-          <p><%= profile.industry %></p>
-          <p><%= profile.languages %></p>
-        </form>
-      </div>
-
-    <div class="second-form-box">
-      <h2>How it works</h2>
-      <ol id="orderedList">
-        <li>View Available Jobs</li>
-        <li>Make an Offer</li>
-        <li>Work Together</li>
-        <li>Job Complete Time for Pay</li>
-      </ol>
-    </div>
+<div class="second-form-box">
+  <h2>How it works</h2>
+    <ol id="orderedList">
+      <li>View Available Jobs</li>
+      <li>Make an Offer</li>
+      <li>Work Together</li>
+      <li>Job Complete Time for Pay</li>
+    </ol>
+</div>
 <div>
 
 
