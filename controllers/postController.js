@@ -12,7 +12,12 @@ const Post = require('../models/post')
   // Post form
 router.get('/jobPost', async (req, res, next) => {
   try {
-    res.render('post/jobPost.ejs')
+    const currentUserId = req.session.userId
+    const foundProfile = await Profile.find({ user: currentUserId })
+    console.log(`\n TESTING! PROFILE!`, foundProfile);
+    res.render('post/jobPost.ejs', {
+      profile: foundProfile
+    })
   }
   catch(err) {
     next(err)
@@ -23,6 +28,7 @@ router.get('/jobPost', async (req, res, next) => {
 // Post Create
 router.post('/jobPost', async (req, res, next) => {
 	try {
+    const businessName = req.body.businessName
 		const postTitle = req.body.title
 		const postExperience = req.body.experience
 		const postBudget = req.body.budget
@@ -32,14 +38,16 @@ router.post('/jobPost', async (req, res, next) => {
 			experience: postExperience,
 			budget: postBudget,
 			description: postDescription,
-     	user: req.session.userId
+     	user: req.session.userId,
+      businessName: businessName
 			// need to put usedId to attach to user
 		})
 		req.session.title = postToCreate.title
 		req.session.experience = postToCreate.experience
 		req.session.budget = postToCreate.budget
 		req.session.description = postToCreate.description
-		// console.log(postToCreate);
+    req.session.businessName = postToCreate.businessName
+		console.log(postToCreate);
 		req.session.message = `Congrats! Your job post is now live!`
 		res.redirect('/user/home')
 	}

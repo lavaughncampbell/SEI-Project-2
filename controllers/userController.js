@@ -77,13 +77,11 @@ router.get('/home', async (req, res, next) => {
     const foundProfile = await Profile.find({ user: currentUserId })
     // const foundPost = await Post.find({ title: desiredTitle })
     // const currentUserId = req.session.userId
-    const foundPost = await Post.find({ user: currentUserId })
+    const foundPost = await Post.find({ user: currentUserId }).populate('profile')
     // .populate('user').populate('offer.user')
     const foundOffers = await Offer.find({}).populate('post')
     // for loop that iterates over a array of posts
     // if posts have offer
-
-
     console.log(`\nthis is found profile`, foundProfile);
     console.log(`\nthis is found post`, foundPost);
 
