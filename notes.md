@@ -84,8 +84,9 @@ If Hire Developer can login and see new hire on their main user screen.
 
 ——————  MVP of ChiQuery ————————
 Future Features:
+Hire Decision: (Accepted / Rejected)
 Messaging System
 Payment System
 Picture Upload Of Work
-Completed Jobs Page For Developers
+Completed Jobs Page For Developers / Ranking
 
