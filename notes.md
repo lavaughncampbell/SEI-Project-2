@@ -30,22 +30,23 @@ Developer Checkbox Register — Incomplete
 - if you click on developer checkbox
 - the logic will switch like you are a developer not a business
 - how that will look is the user home page will see my job or my offers. The how it work on the user home page will be updated for a developer instructions. The button will switch to make offer. it will have the offer form which we will need to use the offer model for. When you make a offer it will go under my offer, and same like a business a developer can show, edit, update, and delete their offer.
+// are you a developer button on profile page needs styling
+styling on show page needs too
+you shouldn't be able to edit/delete a post (or anything) unless its yours (res.locals thing, but not sure) -- this is on the allJobs page
+-- fix hover and hide for sub nav
+-- maybe ask TA why the fonts arent showing on my browser
+
+*******  when you log in, it brings up the logout -- we dont want to see login in the nav when yhou're logged in ********
+
+*** from allJobs page, when clicking into a (individual job) job page, the user shouldn't be able to make edits or delete a job post.  ONLY WANT DEVELOPERS TO SEE A button that says "make offer" on that page. ***
+-- want this to be speicic to the dev whos viewin the show page IN ORDER TO MAKE ABN OFFER
+
+
+
+// does the user need to be able to edit their PROFILE? // (would be edit button on the userHome page in teh profile box)
+// are you a developer button on profile page needs styling
 
 NEEDS WORKS — INCOMPLETE
-
-// 1. // Need CRUD for the offers (developer)
-
-
-// 2. // VIEW ALL JOBS
-Developer can checkout all jobs index
-— Incomplete
-- Developer can basically view the index page.
-- (possibly just DONT SHOW IN PRESENTATION -- when not logged in, can see all jobs from sub-nav)
-
-
-// 3. // CREATE OFFER
-Developer can make offer on job post — Incomplete
-- Develper offer would be referenced with business job post.
 
 
 // 4. // OFFED PLACED
@@ -67,23 +68,6 @@ Business can hire developer or not hire developer from offer show page — Incom
 If Hire Developer can login and see new hire on their main user screen.
 - Developer will click the checkbox and the logic will switch with a new hire button on the my offers box. This is the end of the functionality for MVP.
 
-// 8. // FINAL TOUCHES
-flash messages need to be updated
-styling on show page needs too
-you shouldn't be able to edit/delete a post (or anything) unless its yours (res.locals thing, but not sure) -- this is on the allJobs page
--- fix hover and hide for sub nav
--- maybe ask TA why the fonts arent showing on my browser
-
-*******  when you log in, it brings up the logout -- we dont want to see login in the nav when yhou're logged in ********
-
-*** from allJobs page, when clicking into a (individual job) job page, the user shouldn't be able to make edits or delete a job post.  ONLY WANT DEVELOPERS TO SEE A button that says "make offer" on that page. ***
--- want this to be speicic to the dev whos viewin the show page IN ORDER TO MAKE ABN OFFER
-
-
-
-// does the user need to be able to edit their PROFILE? // (would be edit button on the userHome page in teh profile box)
-
-// are you a developer button on profile page needs styling
 
 
 /// PRESENTATION NOTES ///
