@@ -99,7 +99,7 @@ router.get('/home', async (req, res, next) => {
       console.log('\nthis user is NOT a developer\n');
       console.log('\n HEY! this is the post with offers', foundPost);
       res.render('user/userHome.ejs', {
-        profile: foundProfile,
+        profile: foundProfile[0],
         post: foundPost,
         offers: foundOffers
     })

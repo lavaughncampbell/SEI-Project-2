@@ -59,15 +59,15 @@ router.get('/jobPost/:id', async (req, res, next) => {
       // .populate('comments.user')
     // console.log(`\nthis is show post`, showPost);
     if(foundProfile[0].areYouDeveloper === true) {
-      console.log(`\nworked, this is dev show page for offers\n`, showPost);
-      // console.log(`\n still working on profile`, foundProfile);
+      // console.log(`\nworked, this is dev show page for offers\n`, showPost);
       res.render('developer/showForOffers.ejs', {
         profile: foundProfile[0],
         post: showPost
       })
     } else {
-      // console.log(`\ndidn't work for developer show page for offers`, showPost);
+      console.log(`\nstill working on profile`, foundProfile);
       res.render('post/show.ejs', {
+        profile: foundProfile[0],
         post: showPost,
         indexOfPostToDelete: req.params.id
       })
