@@ -7,6 +7,16 @@ const Offer = require('../models/offer')
 
 // <-------------------------------------> //
 
+router.use((req, res, next) => {
+  if(req.session.loggedIn) {
+    next()
+  } else {
+    req.session.message = "You must be logged in to access this."
+    res.redirect('/auth/login')
+  }
+})
+
+
 // PROFILE ROUTE //
 
   // Profile form
@@ -115,16 +125,6 @@ router.get('/allJobs', async (req, res, next) => {
   }
 })
 
-
-// ALL JOBS INDEX
-// router.get('/allJobs', async (req, res, next) => {
-//   try {
-//     res.render('post/allJobs.ejs')
-//   }
-//   catch(err) {
-//     next(err)
-//   }
-// })
 
 
 module.exports = router

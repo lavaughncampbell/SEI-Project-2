@@ -518,7 +518,9 @@ nav li ul li a:hover {
   color: #4286f4;
 }
 
-
-
+#message {
+  text-align: center;
+  font-family: SF Pro Display;
+}
 
 

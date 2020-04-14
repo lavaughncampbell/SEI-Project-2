@@ -6,40 +6,31 @@
     <h3> <%= profile.businessName %></h3>
   </div>
 
-  <h3>Offer Show Page</h3>
-
   <form method="POST" action="/offer/newOffer" id="job-post" class="input-group-new">
 
   <input id="postId" name="postId" type="hidden" value="<%= post.id %>">
   <input id="postTitle" name="postTitle" type="hidden" value="<%= post.title %>">
 
-  <div class="show-page">
-
-    <label class="show-label">Job:</label>
-    <div>
-      <h2><%= post.title %></h2>
-    </div>
-
-    <label class="show-label">Experience:</label>
-    <div>
-      <h2><%= post.experience %></h2>
-    </div>
-
-    <label class="show-label">Budget:</label>
-    <div>
-      <h2><%= post.budget %></h2>
-    </div>
-
+    <strong>
+      <label class="show-label">Job:</label>
+    </strong>
+      <h2 class="show-page"><%= post.title %></h2>
+    <strong>
+      <label class="show-label">Experience:</label>
+    </strong>
+      <h2 class="show-page"><%= post.experience %></h2>
+    <strong>
+      <label class="show-label">Budget:</label>
+    </strong>
+      <h2 class="show-page"><%= post.budget %></h2>
+    <strong>
     <label class="show-label">Description:</label>
-    <div>
-      <h2><%= post.description %></h2>
-    </div>
-  </div>
+    </strong>
+      <h2 class="show-page"><%= post.description %></h2>
 
  <div id="line-buttons">
   <button>Make Offer</button>
   </div>
-
   </form>
 </div>
 
