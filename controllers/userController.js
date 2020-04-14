@@ -73,20 +73,6 @@ router.get('/home', async (req, res, next) => {
     // for loop that iterates over a array of posts
     // if posts have offer
 
-    const offerArr = []
-
-    nested for loops with a push to a array that creates offers.
-     for(let i = 0; i < foundPost.length; i++) {
-      console.log(foundPost);
-      for(let i = 0; i < foundOffers.length; i++ ) {
-        post.push(foundOffers[i])
-      }
-     }
-
-     // push to array of offers
-     // empty array for push offers
-     // possible redirect
-
 
     console.log(`\nthis is found profile`, foundProfile);
     console.log(`\nthis is found post`, foundPost);

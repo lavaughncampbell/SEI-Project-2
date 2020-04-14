@@ -13,7 +13,7 @@
         <% post.forEach((post) => { %>
           <li>
             <a href="/post/jobPost/<%= post.id %>"><%= post.title %></a>
-            <h2><%= post.offers.id %></h2>
+
           </li>
 
         <% }) %>
@@ -24,16 +24,22 @@
       <form method="get" action="/user/new" id="profile" class="user-chi-profile">
         <div class="profile-home">
           <h3 id="profile-header">User's Profile</h3>
-          <label>Contact Name:</label>
+          <strong>
+            <label>Contact Name:</label>
+          </strong>
           <p><%= profile.contactName %></p>
-          <label>Business Name:</label>
+          <strong>
+            <label>Business Name:</label>
+          </strong>
           <p><%= profile.businessName %></p>
-          <label>Location:</label>
+          <strong>
+            <label>Location:</label>
+          </strong>
           <p><%= profile.location %></p>
-          <label>Industry:</label>
+          <strong>
+            <label>Industry:</label>
+          </strong>
           <p><%= profile.industry %></p>
-          <label>Languages</label>
-          <p><%= profile.languages %></p>
         </div>
         </form>
       </div>

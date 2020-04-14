@@ -40,7 +40,7 @@ router.post('/jobPost', async (req, res, next) => {
 		req.session.budget = postToCreate.budget
 		req.session.description = postToCreate.description
 		// console.log(postToCreate);
-		req.session.message = `${postToCreate.title} successfully added post`
+		req.session.message = `Congrats! Your job post is now live!`
 		res.redirect('/user/home')
 	}
 	catch(err) {

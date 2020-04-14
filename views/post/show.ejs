@@ -7,42 +7,38 @@
   </div>
 
   <form method="POST" action="/post/jobPost" id="job-post" class="input-group-new">
-  <div class="show-page">
-    <label class="show-label">Job:</label>
-    <div>
-      <h2><%= post.title %></h2>
-    </div>
-
-    <label class="show-label">Experience:</label>
-    <div>
-      <h2><%= post.experience %></h2>
-    </div>
-
-    <label class="show-label">Budget:</label>
-    <div>
-      <h2><%= post.budget %></h2>
-    </div>
-
-    <label class="show-label">Description:</label>
-    <div>
-      <h2><%= post.description %></h2>
-    </div>
-  </div>
+  <!-- <div class="show-page"> -->
+    <strong>
+      <label class="show-label">Job:</label>
+    </strong>
+      <h2 class="show-page"><%= post.title %></h2>
+    <strong>
+      <label class="show-label">Experience:</label>
+    </strong>
+      <h2 class="show-page"><%= post.experience %></h2>
+    <strong>
+      <label class="show-label">Budget:</label>
+    </strong>
+      <h2 class="show-page"><%= post.budget %></h2>
+    <strong>
+      <label class="show-label">Description:</label>
+    </strong>
+      <h2 class="show-page"><%= post.description %></h2>
+  <!-- </div> -->
 
     <!-- <button class="submit-btn-profile">Post Job</button>
   </form>
 </div>
  -->
- <div id="line-buttons">
+  <div id="line-buttons">
     <div class="submit-btn-edit" id="edit"><a href="/post/jobPost/<%= post.id %>/edit">Edit</a>
     </div>
 
   </form>
-  <div>
     <form method="POST" action="/post/jobPost/<%= post.id %>?_method=DELETE"><button class="submit-btn-delete">Delete</button>
     </form>
   </div>
-</div>
+  </div>
 
 
 
