@@ -99,7 +99,7 @@ router.get('/home', async (req, res, next) => {
       console.log('\nthis user is NOT a developer\n');
       console.log('\n HEY! this is the post with offers', foundPost);
       res.render('user/userHome.ejs', {
-        profile: foundProfile[0],
+        profile: foundProfile,
         post: foundPost,
         offers: foundOffers
     })
@@ -118,11 +118,10 @@ router.get('/allJobs', async (req, res, next) => {
     const foundProfile = await Profile.find({})
     const allPosts = await Post.find({}).populate('user')
     // console.log(`\nthis is all job posts`, allPosts);
-    console.log(`\nI am looking for profiles on the post query here`, allPosts);
-    console.log(`\nI am looking for profiles on the post query here`, foundProfile);
+    console.log(`\nI am looking for profiles with a post attached`, foundProfile);
     res.render('index/allJobs.ejs', {
       post: allPosts,
-      profile: foundProfile[0]
+      profile: foundProfile,
     })
   }
   catch(err) {

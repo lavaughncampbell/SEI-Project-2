@@ -31,7 +31,6 @@ const profileSchema = new mongoose.Schema({
     ref: 'User',
     required: true // profiles must have a user
   }
-
   // skills: [{
   //  languages: String,
   //  type: String,

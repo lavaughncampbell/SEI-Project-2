@@ -11,9 +11,14 @@
     <div class="all-form-box">
         <li>
           <a id="all-jobs-link" href="/post/jobPost/<%= post.id %>">
-          <h2><%= profile.businessName %></a></h2>
+          <h2><%= post.title %></a></h2>
         <div class="jobs-list">
           <ul>
+          <strong>
+            <li>User:
+          </strong>
+              <%= post.user.email %>
+            </li>
           <strong>
             <li>Experience:
           </strong>
